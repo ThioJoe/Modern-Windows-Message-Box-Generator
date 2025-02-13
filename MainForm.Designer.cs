@@ -34,6 +34,9 @@
             lblTitle = new Label();
             lblHeading = new Label();
             gbButtons = new GroupBox();
+            txtButton2 = new TextBox();
+            txtButton1 = new TextBox();
+            rbCustom = new RadioButton();
             rbRetryCancel = new RadioButton();
             rbAbortRetryIgnore = new RadioButton();
             rbYesNoCancel = new RadioButton();
@@ -159,6 +162,9 @@
             // 
             // gbButtons
             // 
+            gbButtons.Controls.Add(txtButton2);
+            gbButtons.Controls.Add(txtButton1);
+            gbButtons.Controls.Add(rbCustom);
             gbButtons.Controls.Add(rbRetryCancel);
             gbButtons.Controls.Add(rbAbortRetryIgnore);
             gbButtons.Controls.Add(rbYesNoCancel);
@@ -167,10 +173,37 @@
             gbButtons.Controls.Add(rbOk);
             gbButtons.Location = new Point(333, 13);
             gbButtons.Name = "gbButtons";
-            gbButtons.Size = new Size(223, 175);
+            gbButtons.Size = new Size(223, 228);
             gbButtons.TabIndex = 6;
             gbButtons.TabStop = false;
             gbButtons.Text = "Buttons";
+            // 
+            // txtButton2
+            // 
+            txtButton2.Location = new Point(116, 193);
+            txtButton2.Name = "txtButton2";
+            txtButton2.PlaceholderText = "Button 2";
+            txtButton2.Size = new Size(100, 23);
+            txtButton2.TabIndex = 8;
+            // 
+            // txtButton1
+            // 
+            txtButton1.Location = new Point(10, 192);
+            txtButton1.Name = "txtButton1";
+            txtButton1.PlaceholderText = "Button 1";
+            txtButton1.Size = new Size(100, 23);
+            txtButton1.TabIndex = 7;
+            // 
+            // rbCustom
+            // 
+            rbCustom.AutoSize = true;
+            rbCustom.Location = new Point(15, 167);
+            rbCustom.Name = "rbCustom";
+            rbCustom.Size = new Size(67, 19);
+            rbCustom.TabIndex = 6;
+            rbCustom.Text = "Custom";
+            rbCustom.UseVisualStyleBackColor = true;
+            rbCustom.CheckedChanged += radioButton1_CheckedChanged;
             // 
             // rbRetryCancel
             // 
@@ -179,7 +212,6 @@
             rbRetryCancel.Name = "rbRetryCancel";
             rbRetryCancel.Size = new Size(93, 19);
             rbRetryCancel.TabIndex = 5;
-            rbRetryCancel.TabStop = true;
             rbRetryCancel.Text = "Retry/Cancel";
             rbRetryCancel.UseVisualStyleBackColor = true;
             // 
@@ -190,7 +222,6 @@
             rbAbortRetryIgnore.Name = "rbAbortRetryIgnore";
             rbAbortRetryIgnore.Size = new Size(126, 19);
             rbAbortRetryIgnore.TabIndex = 4;
-            rbAbortRetryIgnore.TabStop = true;
             rbAbortRetryIgnore.Text = "Abort/Retry/Ignore";
             rbAbortRetryIgnore.UseVisualStyleBackColor = true;
             // 
@@ -201,7 +232,6 @@
             rbYesNoCancel.Name = "rbYesNoCancel";
             rbYesNoCancel.Size = new Size(104, 19);
             rbYesNoCancel.TabIndex = 3;
-            rbYesNoCancel.TabStop = true;
             rbYesNoCancel.Text = "Yes/No/Cancel";
             rbYesNoCancel.UseVisualStyleBackColor = true;
             // 
@@ -212,7 +242,6 @@
             rbYesNo.Name = "rbYesNo";
             rbYesNo.Size = new Size(63, 19);
             rbYesNo.TabIndex = 2;
-            rbYesNo.TabStop = true;
             rbYesNo.Text = "Yes/No";
             rbYesNo.UseVisualStyleBackColor = true;
             // 
@@ -223,7 +252,6 @@
             rbOkCancel.Name = "rbOkCancel";
             rbOkCancel.Size = new Size(82, 19);
             rbOkCancel.TabIndex = 1;
-            rbOkCancel.TabStop = true;
             rbOkCancel.Text = "OK/Cancel";
             rbOkCancel.UseVisualStyleBackColor = true;
             // 
@@ -840,7 +868,7 @@
             groupBoxBarColor.Controls.Add(rbBarColorYellow);
             groupBoxBarColor.Controls.Add(rbBarColorGray);
             groupBoxBarColor.Controls.Add(rbBarColorBlue);
-            groupBoxBarColor.Location = new Point(334, 198);
+            groupBoxBarColor.Location = new Point(333, 242);
             groupBoxBarColor.Margin = new Padding(2);
             groupBoxBarColor.Name = "groupBoxBarColor";
             groupBoxBarColor.Padding = new Padding(2);
@@ -1213,5 +1241,8 @@
         private GroupBox groupBoxCustomIconTitleFile;
         private TextBox textBoxCustomIconTitlePath;
         private Button buttonBrowseCustomIconTitle;
+        private RadioButton rbCustom;
+        private TextBox txtButton2;
+        private TextBox txtButton1;
     }
 }
