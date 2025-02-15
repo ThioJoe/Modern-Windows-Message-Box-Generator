@@ -25,9 +25,9 @@ namespace Windows_Task_Dialog_Generator
             VERSION = DetermineVersion();
             labelVersion.Text = "Version: " + VERSION;
 
-#if DEBUG
+            #if DEBUG
             buttonTest.Visible = true;
-#endif
+            #endif
 
             // Attach event handler to all radio buttons for icon selection to enable/disable necessary controls when the radio button selection changes
             foreach ( Control control in tableLayoutMainIconSelect.Controls )
@@ -51,9 +51,6 @@ namespace Windows_Task_Dialog_Generator
                     rb.CheckedChanged += EnableDisableNecessaryButtonControls;
                 }
             }
-
-            // Don't allow resize
-            this.FormBorderStyle = FormBorderStyle.FixedSingle;
         }
 
         private void btnShowDialog_Click(object sender, EventArgs e)
