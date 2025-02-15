@@ -115,7 +115,7 @@
 
     public enum ImageresIconIDs : int
     {
-        Information = 99,
+        Information = 81,
         Warning = 84,
         Error = 98,
         Shield = 78,
