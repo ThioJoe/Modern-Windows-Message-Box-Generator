@@ -127,7 +127,7 @@
             txtTitle.Margin = new Padding(5, 2, 5, 5);
             txtTitle.Name = "txtTitle";
             txtTitle.Size = new Size(304, 23);
-            txtTitle.TabIndex = 1;
+            txtTitle.TabIndex = 0;
             // 
             // txtHeading
             // 
@@ -135,7 +135,7 @@
             txtHeading.Margin = new Padding(5, 2, 5, 5);
             txtHeading.Name = "txtHeading";
             txtHeading.Size = new Size(304, 23);
-            txtHeading.TabIndex = 3;
+            txtHeading.TabIndex = 1;
             // 
             // lblTitle
             // 
@@ -168,7 +168,7 @@
             gbButtons.Location = new Point(333, 13);
             gbButtons.Name = "gbButtons";
             gbButtons.Size = new Size(223, 175);
-            gbButtons.TabIndex = 6;
+            gbButtons.TabIndex = 3;
             gbButtons.TabStop = false;
             gbButtons.Text = "Buttons";
             // 
@@ -247,7 +247,7 @@
             gbIconMain.Location = new Point(576, 13);
             gbIconMain.Name = "gbIconMain";
             gbIconMain.Size = new Size(225, 376);
-            gbIconMain.TabIndex = 7;
+            gbIconMain.TabIndex = 5;
             gbIconMain.TabStop = false;
             gbIconMain.Text = "Icons";
             // 
@@ -734,7 +734,7 @@
             btnShowDialog.Location = new Point(8, 464);
             btnShowDialog.Name = "btnShowDialog";
             btnShowDialog.Size = new Size(140, 42);
-            btnShowDialog.TabIndex = 11;
+            btnShowDialog.TabIndex = 0;
             btnShowDialog.Text = "Show Dialog";
             btnShowDialog.UseVisualStyleBackColor = true;
             btnShowDialog.Click += btnShowDialog_Click;
@@ -755,7 +755,7 @@
             txtFooter.Margin = new Padding(5, 2, 5, 5);
             txtFooter.Name = "txtFooter";
             txtFooter.Size = new Size(304, 23);
-            txtFooter.TabIndex = 5;
+            txtFooter.TabIndex = 3;
             // 
             // chkVerification
             // 
@@ -763,7 +763,7 @@
             chkVerification.Location = new Point(3, 3);
             chkVerification.Name = "chkVerification";
             chkVerification.Size = new Size(120, 19);
-            chkVerification.TabIndex = 10;
+            chkVerification.TabIndex = 6;
             chkVerification.Text = "Show verification:";
             chkVerification.UseVisualStyleBackColor = true;
             // 
@@ -784,7 +784,7 @@
             txtExpandedInfo.Multiline = true;
             txtExpandedInfo.Name = "txtExpandedInfo";
             txtExpandedInfo.Size = new Size(304, 92);
-            txtExpandedInfo.TabIndex = 9;
+            txtExpandedInfo.TabIndex = 4;
             // 
             // textBoxCustomIconMainPath
             // 
@@ -792,7 +792,7 @@
             textBoxCustomIconMainPath.Margin = new Padding(2);
             textBoxCustomIconMainPath.Name = "textBoxCustomIconMainPath";
             textBoxCustomIconMainPath.Size = new Size(225, 23);
-            textBoxCustomIconMainPath.TabIndex = 12;
+            textBoxCustomIconMainPath.TabIndex = 1;
             // 
             // buttonBrowseCustomIconMain
             // 
@@ -844,8 +844,8 @@
             groupBoxBarColor.Margin = new Padding(2);
             groupBoxBarColor.Name = "groupBoxBarColor";
             groupBoxBarColor.Padding = new Padding(2);
-            groupBoxBarColor.Size = new Size(222, 116);
-            groupBoxBarColor.TabIndex = 16;
+            groupBoxBarColor.Size = new Size(222, 121);
+            groupBoxBarColor.TabIndex = 4;
             groupBoxBarColor.TabStop = false;
             groupBoxBarColor.Text = "Bar Color";
             // 
@@ -868,7 +868,7 @@
             rbBarColorDefault.Margin = new Padding(2);
             rbBarColorDefault.Name = "rbBarColorDefault";
             rbBarColorDefault.Size = new Size(63, 19);
-            rbBarColorDefault.TabIndex = 5;
+            rbBarColorDefault.TabIndex = 0;
             rbBarColorDefault.TabStop = true;
             rbBarColorDefault.Text = "Default";
             rbBarColorDefault.UseVisualStyleBackColor = true;
@@ -880,7 +880,7 @@
             rbBarColorGreen.Margin = new Padding(2);
             rbBarColorGreen.Name = "rbBarColorGreen";
             rbBarColorGreen.Size = new Size(56, 19);
-            rbBarColorGreen.TabIndex = 4;
+            rbBarColorGreen.TabIndex = 1;
             rbBarColorGreen.Text = "Green";
             rbBarColorGreen.UseVisualStyleBackColor = true;
             // 
@@ -891,7 +891,7 @@
             rbBarColorRed.Margin = new Padding(2);
             rbBarColorRed.Name = "rbBarColorRed";
             rbBarColorRed.Size = new Size(45, 19);
-            rbBarColorRed.TabIndex = 3;
+            rbBarColorRed.TabIndex = 4;
             rbBarColorRed.Text = "Red";
             rbBarColorRed.UseVisualStyleBackColor = true;
             // 
@@ -902,7 +902,7 @@
             rbBarColorYellow.Margin = new Padding(2);
             rbBarColorYellow.Name = "rbBarColorYellow";
             rbBarColorYellow.Size = new Size(59, 19);
-            rbBarColorYellow.TabIndex = 2;
+            rbBarColorYellow.TabIndex = 3;
             rbBarColorYellow.Text = "Yellow";
             rbBarColorYellow.UseVisualStyleBackColor = true;
             // 
@@ -913,7 +913,7 @@
             rbBarColorGray.Margin = new Padding(2);
             rbBarColorGray.Name = "rbBarColorGray";
             rbBarColorGray.Size = new Size(49, 19);
-            rbBarColorGray.TabIndex = 1;
+            rbBarColorGray.TabIndex = 2;
             rbBarColorGray.Text = "Gray";
             rbBarColorGray.UseVisualStyleBackColor = true;
             // 
@@ -924,7 +924,7 @@
             rbBarColorBlue.Margin = new Padding(2);
             rbBarColorBlue.Name = "rbBarColorBlue";
             rbBarColorBlue.Size = new Size(48, 19);
-            rbBarColorBlue.TabIndex = 0;
+            rbBarColorBlue.TabIndex = 5;
             rbBarColorBlue.Text = "Blue";
             rbBarColorBlue.UseVisualStyleBackColor = true;
             // 
@@ -947,7 +947,7 @@
             textBoxCustomIconMainID.Margin = new Padding(2);
             textBoxCustomIconMainID.Name = "textBoxCustomIconMainID";
             textBoxCustomIconMainID.Size = new Size(125, 23);
-            textBoxCustomIconMainID.TabIndex = 14;
+            textBoxCustomIconMainID.TabIndex = 0;
             textBoxCustomIconMainID.Enter += textBoxCustomIconMainID_Enter;
             // 
             // lblMessage
@@ -966,7 +966,7 @@
             txtMessage.Margin = new Padding(5, 2, 5, 5);
             txtMessage.Name = "txtMessage";
             txtMessage.Size = new Size(304, 23);
-            txtMessage.TabIndex = 19;
+            txtMessage.TabIndex = 2;
             // 
             // textBoxVerification
             // 
@@ -975,7 +975,7 @@
             textBoxVerification.Name = "textBoxVerification";
             textBoxVerification.PlaceholderText = " Don't ask again";
             textBoxVerification.Size = new Size(176, 23);
-            textBoxVerification.TabIndex = 20;
+            textBoxVerification.TabIndex = 5;
             // 
             // buttonImageResIcons
             // 
@@ -983,7 +983,7 @@
             buttonImageResIcons.Margin = new Padding(2);
             buttonImageResIcons.Name = "buttonImageResIcons";
             buttonImageResIcons.Size = new Size(120, 27);
-            buttonImageResIcons.TabIndex = 21;
+            buttonImageResIcons.TabIndex = 1;
             buttonImageResIcons.Text = "View Icon IDs";
             buttonImageResIcons.UseVisualStyleBackColor = true;
             buttonImageResIcons.Click += buttonImageResIcons_Click;
@@ -1004,8 +1004,8 @@
             flowLayoutPanel1.FlowDirection = FlowDirection.TopDown;
             flowLayoutPanel1.Location = new Point(12, 13);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(317, 374);
-            flowLayoutPanel1.TabIndex = 22;
+            flowLayoutPanel1.Size = new Size(317, 396);
+            flowLayoutPanel1.TabIndex = 2;
             // 
             // flowLayoutPanelVerification
             // 
@@ -1047,7 +1047,7 @@
             textBoxCustomIconTitleID.Margin = new Padding(2);
             textBoxCustomIconTitleID.Name = "textBoxCustomIconTitleID";
             textBoxCustomIconTitleID.Size = new Size(125, 23);
-            textBoxCustomIconTitleID.TabIndex = 14;
+            textBoxCustomIconTitleID.TabIndex = 2;
             textBoxCustomIconTitleID.Enter += textBoxCustomIconTitleID_Enter;
             // 
             // groupBoxCustomIconTitleFile
@@ -1070,7 +1070,7 @@
             textBoxCustomIconTitlePath.Margin = new Padding(2);
             textBoxCustomIconTitlePath.Name = "textBoxCustomIconTitlePath";
             textBoxCustomIconTitlePath.Size = new Size(225, 23);
-            textBoxCustomIconTitlePath.TabIndex = 12;
+            textBoxCustomIconTitlePath.TabIndex = 3;
             // 
             // buttonBrowseCustomIconTitle
             // 
