@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             txtTitle = new TextBox();
             txtHeading = new TextBox();
@@ -115,6 +116,7 @@
             groupBoxCustomIconTitleFile = new GroupBox();
             textBoxCustomIconTitlePath = new TextBox();
             buttonBrowseCustomIconTitle = new Button();
+            toolTip1 = new ToolTip(components);
             gbButtons.SuspendLayout();
             flowButtons.SuspendLayout();
             flowCustom1.SuspendLayout();
@@ -304,6 +306,7 @@
             checkCustom1Visibility.Size = new Size(15, 14);
             checkCustom1Visibility.TabIndex = 8;
             checkCustom1Visibility.ThreeState = true;
+            toolTip1.SetToolTip(checkCustom1Visibility, "Set the custom button to enabled, disabled, or invisible");
             checkCustom1Visibility.UseVisualStyleBackColor = true;
             // 
             // textBoxCustom1
@@ -314,6 +317,7 @@
             textBoxCustom1.Name = "textBoxCustom1";
             textBoxCustom1.Size = new Size(159, 23);
             textBoxCustom1.TabIndex = 7;
+            toolTip1.SetToolTip(textBoxCustom1, "The text on the custom button");
             // 
             // flowCustom2
             // 
@@ -337,6 +341,7 @@
             checkCustom2Visibility.Size = new Size(15, 14);
             checkCustom2Visibility.TabIndex = 8;
             checkCustom2Visibility.ThreeState = true;
+            toolTip1.SetToolTip(checkCustom2Visibility, "Set the custom button to enabled, disabled, or invisible");
             checkCustom2Visibility.UseVisualStyleBackColor = true;
             // 
             // textBoxCustom2
@@ -347,6 +352,7 @@
             textBoxCustom2.Name = "textBoxCustom2";
             textBoxCustom2.Size = new Size(159, 23);
             textBoxCustom2.TabIndex = 7;
+            toolTip1.SetToolTip(textBoxCustom2, "The text on the custom button");
             // 
             // flowCustom3
             // 
@@ -370,6 +376,7 @@
             checkCustom3Visibility.Size = new Size(15, 14);
             checkCustom3Visibility.TabIndex = 8;
             checkCustom3Visibility.ThreeState = true;
+            toolTip1.SetToolTip(checkCustom3Visibility, "Set the custom button to enabled, disabled, or invisible");
             checkCustom3Visibility.UseVisualStyleBackColor = true;
             // 
             // textBoxCustom3
@@ -380,6 +387,7 @@
             textBoxCustom3.Name = "textBoxCustom3";
             textBoxCustom3.Size = new Size(159, 23);
             textBoxCustom3.TabIndex = 7;
+            toolTip1.SetToolTip(textBoxCustom3, "The text on the custom button");
             // 
             // gbIconMain
             // 
@@ -909,6 +917,7 @@
             chkVerification.Size = new Size(120, 19);
             chkVerification.TabIndex = 6;
             chkVerification.Text = "Show verification:";
+            toolTip1.SetToolTip(chkVerification, "Whether to show a check box in the dialog labelled with the associated text");
             chkVerification.UseVisualStyleBackColor = true;
             // 
             // lblExpandedInfo
@@ -1385,5 +1394,6 @@
         private FlowLayoutPanel flowCustom3;
         private CheckBox checkCustom3Visibility;
         private TextBox textBoxCustom3;
+        private ToolTip toolTip1;
     }
 }
