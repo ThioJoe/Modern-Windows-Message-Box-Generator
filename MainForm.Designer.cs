@@ -1384,12 +1384,10 @@
         private RadioButton rbCustom;
         private TextBox textBoxCustom1;
         private CheckBox checkCustom1Visibility;
-        private TextBox textBox1;
         private CheckBox checkCustom2Visibility;
         private FlowLayoutPanel flowButtons;
         private FlowLayoutPanel flowCustom1;
         private FlowLayoutPanel flowCustom2;
-        private CheckBox checkBox1;
         private TextBox textBoxCustom2;
         private FlowLayoutPanel flowCustom3;
         private CheckBox checkCustom3Visibility;
