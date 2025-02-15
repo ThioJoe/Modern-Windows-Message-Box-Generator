@@ -20,13 +20,13 @@
 
 ## Examples 
 <p align="center">
-<img width="450" alt="Example Message Box Go Touch Grass" src="https://github.com/user-attachments/assets/914b978e-3f52-4e9a-b813-cdc0cf552ea4">
+<img width="450" alt="Example Message Box Go Touch Grass" src="https://github.com/user-attachments/assets/64c7451e-131e-4bfd-b770-5b78d0c22026">
 <img width="450" alt="Example Message Box Visual Studio" src="https://github.com/user-attachments/assets/b232caa7-8253-4ffc-ae72-d6725d99c152">
 </p>
 
 ## Main Window
 <p align="center">
-<img width="700" alt="Main Window" src="https://github.com/user-attachments/assets/87ba24c2-1005-426f-bba0-bb7122e9b5e9">
+<img width="700" alt="Main Window" src="https://github.com/user-attachments/assets/df60f648-c259-42a0-a0d3-4a6a4a529b8b">
 </p>
 
 ## How to Compile
