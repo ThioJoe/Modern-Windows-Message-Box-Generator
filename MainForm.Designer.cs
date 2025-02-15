@@ -97,7 +97,7 @@
             textBoxVerification = new TextBox();
             buttonImageResIcons = new Button();
             flowLayoutPanel1 = new FlowLayoutPanel();
-            flowLayoutPanel2 = new FlowLayoutPanel();
+            flowLayoutPanelVerification = new FlowLayoutPanel();
             labelVersion = new Label();
             groupBoxCustomIconTitleID = new GroupBox();
             textBoxCustomIconTitleID = new TextBox();
@@ -116,7 +116,7 @@
             groupBoxBarColor.SuspendLayout();
             groupBoxCustomIconMainID.SuspendLayout();
             flowLayoutPanel1.SuspendLayout();
-            flowLayoutPanel2.SuspendLayout();
+            flowLayoutPanelVerification.SuspendLayout();
             groupBoxCustomIconTitleID.SuspendLayout();
             groupBoxCustomIconTitleFile.SuspendLayout();
             SuspendLayout();
@@ -844,7 +844,7 @@
             groupBoxBarColor.Margin = new Padding(2);
             groupBoxBarColor.Name = "groupBoxBarColor";
             groupBoxBarColor.Padding = new Padding(2);
-            groupBoxBarColor.Size = new Size(222, 147);
+            groupBoxBarColor.Size = new Size(222, 116);
             groupBoxBarColor.TabIndex = 16;
             groupBoxBarColor.TabStop = false;
             groupBoxBarColor.Text = "Bar Color";
@@ -852,7 +852,7 @@
             // rbBarColorNone
             // 
             rbBarColorNone.AutoSize = true;
-            rbBarColorNone.Location = new Point(27, 97);
+            rbBarColorNone.Location = new Point(27, 87);
             rbBarColorNone.Margin = new Padding(2);
             rbBarColorNone.Name = "rbBarColorNone";
             rbBarColorNone.Size = new Size(86, 19);
@@ -887,7 +887,7 @@
             // rbBarColorRed
             // 
             rbBarColorRed.AutoSize = true;
-            rbBarColorRed.Location = new Point(27, 71);
+            rbBarColorRed.Location = new Point(27, 67);
             rbBarColorRed.Margin = new Padding(2);
             rbBarColorRed.Name = "rbBarColorRed";
             rbBarColorRed.Size = new Size(45, 19);
@@ -898,7 +898,7 @@
             // rbBarColorYellow
             // 
             rbBarColorYellow.AutoSize = true;
-            rbBarColorYellow.Location = new Point(97, 48);
+            rbBarColorYellow.Location = new Point(97, 47);
             rbBarColorYellow.Margin = new Padding(2);
             rbBarColorYellow.Name = "rbBarColorYellow";
             rbBarColorYellow.Size = new Size(59, 19);
@@ -909,7 +909,7 @@
             // rbBarColorGray
             // 
             rbBarColorGray.AutoSize = true;
-            rbBarColorGray.Location = new Point(27, 48);
+            rbBarColorGray.Location = new Point(27, 47);
             rbBarColorGray.Margin = new Padding(2);
             rbBarColorGray.Name = "rbBarColorGray";
             rbBarColorGray.Size = new Size(49, 19);
@@ -920,7 +920,7 @@
             // rbBarColorBlue
             // 
             rbBarColorBlue.AutoSize = true;
-            rbBarColorBlue.Location = new Point(97, 71);
+            rbBarColorBlue.Location = new Point(97, 67);
             rbBarColorBlue.Margin = new Padding(2);
             rbBarColorBlue.Name = "rbBarColorBlue";
             rbBarColorBlue.Size = new Size(48, 19);
@@ -1000,23 +1000,23 @@
             flowLayoutPanel1.Controls.Add(txtFooter);
             flowLayoutPanel1.Controls.Add(lblExpandedInfo);
             flowLayoutPanel1.Controls.Add(txtExpandedInfo);
-            flowLayoutPanel1.Controls.Add(flowLayoutPanel2);
+            flowLayoutPanel1.Controls.Add(flowLayoutPanelVerification);
             flowLayoutPanel1.FlowDirection = FlowDirection.TopDown;
             flowLayoutPanel1.Location = new Point(12, 13);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
             flowLayoutPanel1.Size = new Size(317, 374);
             flowLayoutPanel1.TabIndex = 22;
             // 
-            // flowLayoutPanel2
+            // flowLayoutPanelVerification
             // 
-            flowLayoutPanel2.AutoSize = true;
-            flowLayoutPanel2.Controls.Add(chkVerification);
-            flowLayoutPanel2.Controls.Add(textBoxVerification);
-            flowLayoutPanel2.Location = new Point(3, 334);
-            flowLayoutPanel2.Margin = new Padding(3, 5, 3, 3);
-            flowLayoutPanel2.Name = "flowLayoutPanel2";
-            flowLayoutPanel2.Size = new Size(306, 27);
-            flowLayoutPanel2.TabIndex = 24;
+            flowLayoutPanelVerification.AutoSize = true;
+            flowLayoutPanelVerification.Controls.Add(chkVerification);
+            flowLayoutPanelVerification.Controls.Add(textBoxVerification);
+            flowLayoutPanelVerification.Location = new Point(3, 334);
+            flowLayoutPanelVerification.Margin = new Padding(3, 5, 3, 3);
+            flowLayoutPanelVerification.Name = "flowLayoutPanelVerification";
+            flowLayoutPanelVerification.Size = new Size(306, 27);
+            flowLayoutPanelVerification.TabIndex = 24;
             // 
             // labelVersion
             // 
@@ -1126,8 +1126,8 @@
             groupBoxCustomIconMainID.PerformLayout();
             flowLayoutPanel1.ResumeLayout(false);
             flowLayoutPanel1.PerformLayout();
-            flowLayoutPanel2.ResumeLayout(false);
-            flowLayoutPanel2.PerformLayout();
+            flowLayoutPanelVerification.ResumeLayout(false);
+            flowLayoutPanelVerification.PerformLayout();
             groupBoxCustomIconTitleID.ResumeLayout(false);
             groupBoxCustomIconTitleID.PerformLayout();
             groupBoxCustomIconTitleFile.ResumeLayout(false);
@@ -1188,7 +1188,7 @@
         private Button buttonImageResIcons;
         private FlowLayoutPanel flowLayoutPanel1;
         private Label labelVersion;
-        private FlowLayoutPanel flowLayoutPanel2;
+        private FlowLayoutPanel flowLayoutPanelVerification;
         private SplitContainer splitContainer1;
         private TableLayoutPanel tableLayoutMainIconSelect;
         private TableLayoutPanel tableLayoutTitleIconSelect;
