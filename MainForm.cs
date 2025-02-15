@@ -44,6 +44,13 @@ namespace Windows_Task_Dialog_Generator
                     rb.CheckedChanged += EnableDisableNecessaryTitleIconControls;
                 }
             }
+            foreach (Control control in flowButtons.Controls )
+            {
+                if ( control is RadioButton rb )
+                {
+                    rb.CheckedChanged += EnableDisableNecessaryButtonControls;
+                }
+            }
 
             // Don't allow resize
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
@@ -136,6 +143,38 @@ namespace Windows_Task_Dialog_Generator
             {
                 page.Buttons.Add(TaskDialogButton.Retry);
                 page.Buttons.Add(TaskDialogButton.Cancel);
+            }
+            else if ( rbCustom.Checked )
+            {
+                // Add the custom buttons if they are checked, and enable them depending on check state being fully checked (enabled) vs intermediate (disabled)
+                // For the text, use a space if the text box is empty, otherwise it will cause an exception
+
+                // Custom Button 1
+                if ( checkCustom1Visibility.CheckState != CheckState.Unchecked )
+                {
+                    string customButtonText1 = string.IsNullOrEmpty(textBoxCustom1.Text) ? " " : textBoxCustom1.Text;
+                    TaskDialogButton customButton1 = new TaskDialogButton(customButtonText1);
+                    page.Buttons.Add(customButton1);
+                    customButton1.Enabled = checkCustom1Visibility.CheckState == CheckState.Checked;
+                }
+
+                // Custom Button 2
+                if ( checkCustom2Visibility.CheckState != CheckState.Unchecked )
+                {
+                    string customButtonText2 = string.IsNullOrEmpty(textBoxCustom2.Text) ? " " : textBoxCustom2.Text;
+                    TaskDialogButton customButton2 = new TaskDialogButton(customButtonText2);
+                    page.Buttons.Add(customButton2);
+                    customButton2.Enabled = checkCustom2Visibility.CheckState == CheckState.Checked;
+                }
+
+                // Custom Button 3
+                if ( checkCustom3Visibility.CheckState != CheckState.Unchecked )
+                {
+                    string customButtonText3 = string.IsNullOrEmpty(textBoxCustom3.Text) ? " " : textBoxCustom3.Text;
+                    TaskDialogButton customButton3 = new TaskDialogButton(customButtonText3);
+                    page.Buttons.Add(customButton3);
+                    customButton3.Enabled = checkCustom3Visibility.CheckState == CheckState.Checked;
+                }
             }
 
             return page;
@@ -742,6 +781,19 @@ namespace Windows_Task_Dialog_Generator
             groupBoxCustomIconTitleID.Enabled = rbIconTitleCustomID.Checked;
             // Enable the custom file path group box if the custom file radio button is checked
             groupBoxCustomIconTitleFile.Enabled = rbIconTitleCustomFile.Checked;
+        }
+
+        private void EnableDisableNecessaryButtonControls(object? sender, EventArgs e)
+        {
+            // Enable the custom button text boxes if the custom button radio button is checked
+            checkCustom1Visibility.Enabled = rbCustom.Checked;
+            checkCustom2Visibility.Enabled = rbCustom.Checked;
+            checkCustom3Visibility.Enabled = rbCustom.Checked;
+
+            // Enable the custom button text boxes if the custom button radio button is checked
+            textBoxCustom1.Enabled = rbCustom.Checked;
+            textBoxCustom2.Enabled = rbCustom.Checked;
+            textBoxCustom3.Enabled = rbCustom.Checked;
         }
 
         private void buttonTest_Click(object sender, EventArgs e)
