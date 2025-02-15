@@ -43,15 +43,13 @@
             rbAbortRetryIgnore = new RadioButton();
             rbRetryCancel = new RadioButton();
             rbCustom = new RadioButton();
-            flowCustom1 = new FlowLayoutPanel();
-            checkCustom1Visibility = new CheckBox();
-            textBoxCustom1 = new TextBox();
-            flowCustom2 = new FlowLayoutPanel();
-            checkCustom2Visibility = new CheckBox();
-            textBoxCustom2 = new TextBox();
-            flowCustom3 = new FlowLayoutPanel();
+            tableLayoutCustom = new TableLayoutPanel();
             checkCustom3Visibility = new CheckBox();
             textBoxCustom3 = new TextBox();
+            checkCustom2Visibility = new CheckBox();
+            textBoxCustom2 = new TextBox();
+            checkCustom1Visibility = new CheckBox();
+            textBoxCustom1 = new TextBox();
             gbIconMain = new GroupBox();
             labelSelectTitleIcon = new Label();
             labelSelectMainIcon = new Label();
@@ -119,9 +117,7 @@
             toolTip1 = new ToolTip(components);
             gbButtons.SuspendLayout();
             flowButtons.SuspendLayout();
-            flowCustom1.SuspendLayout();
-            flowCustom2.SuspendLayout();
-            flowCustom3.SuspendLayout();
+            tableLayoutCustom.SuspendLayout();
             gbIconMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
@@ -178,7 +174,7 @@
             // 
             gbButtons.Anchor = AnchorStyles.Top;
             gbButtons.Controls.Add(flowButtons);
-            gbButtons.Location = new Point(340, 13);
+            gbButtons.Location = new Point(343, 13);
             gbButtons.Name = "gbButtons";
             gbButtons.Size = new Size(223, 306);
             gbButtons.TabIndex = 3;
@@ -194,13 +190,11 @@
             flowButtons.Controls.Add(rbAbortRetryIgnore);
             flowButtons.Controls.Add(rbRetryCancel);
             flowButtons.Controls.Add(rbCustom);
-            flowButtons.Controls.Add(flowCustom1);
-            flowButtons.Controls.Add(flowCustom2);
-            flowButtons.Controls.Add(flowCustom3);
+            flowButtons.Controls.Add(tableLayoutCustom);
             flowButtons.Dock = DockStyle.Fill;
             flowButtons.FlowDirection = FlowDirection.TopDown;
             flowButtons.Location = new Point(3, 19);
-            flowButtons.Margin = new Padding(2);
+            flowButtons.Margin = new Padding(2, 2, 2, 2);
             flowButtons.Name = "flowButtons";
             flowButtons.Size = new Size(217, 284);
             flowButtons.TabIndex = 24;
@@ -284,110 +278,98 @@
             rbCustom.Text = "Custom";
             rbCustom.UseVisualStyleBackColor = true;
             // 
-            // flowCustom1
+            // tableLayoutCustom
             // 
-            flowCustom1.AutoSize = true;
-            flowCustom1.Controls.Add(checkCustom1Visibility);
-            flowCustom1.Controls.Add(textBoxCustom1);
-            flowCustom1.Location = new Point(18, 177);
-            flowCustom1.Margin = new Padding(18, 2, 2, 2);
-            flowCustom1.Name = "flowCustom1";
-            flowCustom1.Size = new Size(186, 29);
-            flowCustom1.TabIndex = 25;
-            flowCustom1.WrapContents = false;
-            // 
-            // checkCustom1Visibility
-            // 
-            checkCustom1Visibility.Anchor = AnchorStyles.Left;
-            checkCustom1Visibility.AutoSize = true;
-            checkCustom1Visibility.Enabled = false;
-            checkCustom1Visibility.Location = new Point(3, 7);
-            checkCustom1Visibility.Name = "checkCustom1Visibility";
-            checkCustom1Visibility.Size = new Size(15, 14);
-            checkCustom1Visibility.TabIndex = 8;
-            checkCustom1Visibility.ThreeState = true;
-            toolTip1.SetToolTip(checkCustom1Visibility, "Set the custom button to enabled, disabled, or invisible");
-            checkCustom1Visibility.UseVisualStyleBackColor = true;
-            // 
-            // textBoxCustom1
-            // 
-            textBoxCustom1.Dock = DockStyle.Top;
-            textBoxCustom1.Enabled = false;
-            textBoxCustom1.Location = new Point(24, 3);
-            textBoxCustom1.Name = "textBoxCustom1";
-            textBoxCustom1.Size = new Size(159, 23);
-            textBoxCustom1.TabIndex = 7;
-            toolTip1.SetToolTip(textBoxCustom1, "The text on the custom button");
-            // 
-            // flowCustom2
-            // 
-            flowCustom2.AutoSize = true;
-            flowCustom2.Controls.Add(checkCustom2Visibility);
-            flowCustom2.Controls.Add(textBoxCustom2);
-            flowCustom2.Location = new Point(18, 210);
-            flowCustom2.Margin = new Padding(18, 2, 2, 2);
-            flowCustom2.Name = "flowCustom2";
-            flowCustom2.Size = new Size(186, 29);
-            flowCustom2.TabIndex = 26;
-            flowCustom2.WrapContents = false;
-            // 
-            // checkCustom2Visibility
-            // 
-            checkCustom2Visibility.Anchor = AnchorStyles.Left;
-            checkCustom2Visibility.AutoSize = true;
-            checkCustom2Visibility.Enabled = false;
-            checkCustom2Visibility.Location = new Point(3, 7);
-            checkCustom2Visibility.Name = "checkCustom2Visibility";
-            checkCustom2Visibility.Size = new Size(15, 14);
-            checkCustom2Visibility.TabIndex = 8;
-            checkCustom2Visibility.ThreeState = true;
-            toolTip1.SetToolTip(checkCustom2Visibility, "Set the custom button to enabled, disabled, or invisible");
-            checkCustom2Visibility.UseVisualStyleBackColor = true;
-            // 
-            // textBoxCustom2
-            // 
-            textBoxCustom2.Anchor = AnchorStyles.Left;
-            textBoxCustom2.Enabled = false;
-            textBoxCustom2.Location = new Point(24, 3);
-            textBoxCustom2.Name = "textBoxCustom2";
-            textBoxCustom2.Size = new Size(159, 23);
-            textBoxCustom2.TabIndex = 7;
-            toolTip1.SetToolTip(textBoxCustom2, "The text on the custom button");
-            // 
-            // flowCustom3
-            // 
-            flowCustom3.AutoSize = true;
-            flowCustom3.Controls.Add(checkCustom3Visibility);
-            flowCustom3.Controls.Add(textBoxCustom3);
-            flowCustom3.Location = new Point(18, 243);
-            flowCustom3.Margin = new Padding(18, 2, 2, 2);
-            flowCustom3.Name = "flowCustom3";
-            flowCustom3.Size = new Size(186, 29);
-            flowCustom3.TabIndex = 27;
-            flowCustom3.WrapContents = false;
+            tableLayoutCustom.AutoSize = true;
+            tableLayoutCustom.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            tableLayoutCustom.ColumnCount = 2;
+            tableLayoutCustom.ColumnStyles.Add(new ColumnStyle());
+            tableLayoutCustom.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableLayoutCustom.Controls.Add(checkCustom3Visibility, 0, 2);
+            tableLayoutCustom.Controls.Add(textBoxCustom3, 1, 2);
+            tableLayoutCustom.Controls.Add(checkCustom2Visibility, 0, 1);
+            tableLayoutCustom.Controls.Add(textBoxCustom2, 1, 1);
+            tableLayoutCustom.Controls.Add(checkCustom1Visibility, 0, 0);
+            tableLayoutCustom.Controls.Add(textBoxCustom1, 1, 0);
+            tableLayoutCustom.Location = new Point(3, 178);
+            tableLayoutCustom.Name = "tableLayoutCustom";
+            tableLayoutCustom.RowCount = 3;
+            tableLayoutCustom.RowStyles.Add(new RowStyle(SizeType.Percent, 33.33333F));
+            tableLayoutCustom.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
+            tableLayoutCustom.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
+            tableLayoutCustom.Size = new Size(211, 87);
+            tableLayoutCustom.TabIndex = 7;
             // 
             // checkCustom3Visibility
             // 
-            checkCustom3Visibility.Anchor = AnchorStyles.Left;
             checkCustom3Visibility.AutoSize = true;
+            checkCustom3Visibility.CheckAlign = ContentAlignment.MiddleCenter;
+            checkCustom3Visibility.Dock = DockStyle.Fill;
             checkCustom3Visibility.Enabled = false;
-            checkCustom3Visibility.Location = new Point(3, 7);
+            checkCustom3Visibility.Location = new Point(3, 61);
             checkCustom3Visibility.Name = "checkCustom3Visibility";
-            checkCustom3Visibility.Size = new Size(15, 14);
-            checkCustom3Visibility.TabIndex = 8;
+            checkCustom3Visibility.Size = new Size(15, 23);
+            checkCustom3Visibility.TabIndex = 2;
             checkCustom3Visibility.ThreeState = true;
             toolTip1.SetToolTip(checkCustom3Visibility, "Set the custom button to enabled, disabled, or invisible");
             checkCustom3Visibility.UseVisualStyleBackColor = true;
             // 
             // textBoxCustom3
             // 
-            textBoxCustom3.Anchor = AnchorStyles.Left;
+            textBoxCustom3.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             textBoxCustom3.Enabled = false;
-            textBoxCustom3.Location = new Point(24, 3);
+            textBoxCustom3.Location = new Point(24, 61);
             textBoxCustom3.Name = "textBoxCustom3";
-            textBoxCustom3.Size = new Size(159, 23);
-            textBoxCustom3.TabIndex = 7;
+            textBoxCustom3.Size = new Size(184, 23);
+            textBoxCustom3.TabIndex = 5;
             toolTip1.SetToolTip(textBoxCustom3, "The text on the custom button");
+            // 
+            // checkCustom2Visibility
+            // 
+            checkCustom2Visibility.AutoSize = true;
+            checkCustom2Visibility.CheckAlign = ContentAlignment.MiddleCenter;
+            checkCustom2Visibility.Dock = DockStyle.Fill;
+            checkCustom2Visibility.Enabled = false;
+            checkCustom2Visibility.Location = new Point(3, 32);
+            checkCustom2Visibility.Name = "checkCustom2Visibility";
+            checkCustom2Visibility.Size = new Size(15, 23);
+            checkCustom2Visibility.TabIndex = 1;
+            checkCustom2Visibility.ThreeState = true;
+            toolTip1.SetToolTip(checkCustom2Visibility, "Set the custom button to enabled, disabled, or invisible");
+            checkCustom2Visibility.UseVisualStyleBackColor = true;
+            // 
+            // textBoxCustom2
+            // 
+            textBoxCustom2.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            textBoxCustom2.Enabled = false;
+            textBoxCustom2.Location = new Point(24, 32);
+            textBoxCustom2.Name = "textBoxCustom2";
+            textBoxCustom2.Size = new Size(184, 23);
+            textBoxCustom2.TabIndex = 4;
+            toolTip1.SetToolTip(textBoxCustom2, "The text on the custom button");
+            // 
+            // checkCustom1Visibility
+            // 
+            checkCustom1Visibility.CheckAlign = ContentAlignment.MiddleCenter;
+            checkCustom1Visibility.Dock = DockStyle.Fill;
+            checkCustom1Visibility.Enabled = false;
+            checkCustom1Visibility.Location = new Point(3, 3);
+            checkCustom1Visibility.Name = "checkCustom1Visibility";
+            checkCustom1Visibility.Size = new Size(15, 23);
+            checkCustom1Visibility.TabIndex = 0;
+            checkCustom1Visibility.ThreeState = true;
+            toolTip1.SetToolTip(checkCustom1Visibility, "Set the custom button to enabled, disabled, or invisible");
+            checkCustom1Visibility.UseVisualStyleBackColor = true;
+            // 
+            // textBoxCustom1
+            // 
+            textBoxCustom1.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            textBoxCustom1.Enabled = false;
+            textBoxCustom1.Location = new Point(24, 3);
+            textBoxCustom1.Name = "textBoxCustom1";
+            textBoxCustom1.Size = new Size(184, 23);
+            textBoxCustom1.TabIndex = 3;
+            toolTip1.SetToolTip(textBoxCustom1, "The text on the custom button");
             // 
             // gbIconMain
             // 
@@ -395,7 +377,7 @@
             gbIconMain.Controls.Add(labelSelectTitleIcon);
             gbIconMain.Controls.Add(labelSelectMainIcon);
             gbIconMain.Controls.Add(splitContainer1);
-            gbIconMain.Location = new Point(576, 13);
+            gbIconMain.Location = new Point(579, 13);
             gbIconMain.Name = "gbIconMain";
             gbIconMain.Size = new Size(225, 376);
             gbIconMain.TabIndex = 5;
@@ -942,7 +924,7 @@
             // textBoxCustomIconMainPath
             // 
             textBoxCustomIconMainPath.Location = new Point(9, 23);
-            textBoxCustomIconMainPath.Margin = new Padding(2);
+            textBoxCustomIconMainPath.Margin = new Padding(2, 2, 2, 2);
             textBoxCustomIconMainPath.Name = "textBoxCustomIconMainPath";
             textBoxCustomIconMainPath.Size = new Size(225, 23);
             textBoxCustomIconMainPath.TabIndex = 1;
@@ -950,7 +932,7 @@
             // buttonBrowseCustomIconMain
             // 
             buttonBrowseCustomIconMain.Location = new Point(236, 20);
-            buttonBrowseCustomIconMain.Margin = new Padding(2);
+            buttonBrowseCustomIconMain.Margin = new Padding(2, 2, 2, 2);
             buttonBrowseCustomIconMain.Name = "buttonBrowseCustomIconMain";
             buttonBrowseCustomIconMain.Size = new Size(78, 26);
             buttonBrowseCustomIconMain.TabIndex = 13;
@@ -964,10 +946,10 @@
             groupBoxCustomIconMainFile.Controls.Add(textBoxCustomIconMainPath);
             groupBoxCustomIconMainFile.Controls.Add(buttonBrowseCustomIconMain);
             groupBoxCustomIconMainFile.Enabled = false;
-            groupBoxCustomIconMainFile.Location = new Point(482, 461);
-            groupBoxCustomIconMainFile.Margin = new Padding(2);
+            groupBoxCustomIconMainFile.Location = new Point(486, 461);
+            groupBoxCustomIconMainFile.Margin = new Padding(2, 2, 2, 2);
             groupBoxCustomIconMainFile.Name = "groupBoxCustomIconMainFile";
-            groupBoxCustomIconMainFile.Padding = new Padding(2);
+            groupBoxCustomIconMainFile.Padding = new Padding(2, 2, 2, 2);
             groupBoxCustomIconMainFile.Size = new Size(318, 55);
             groupBoxCustomIconMainFile.TabIndex = 14;
             groupBoxCustomIconMainFile.TabStop = false;
@@ -977,7 +959,7 @@
             // 
             buttonTest.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             buttonTest.Location = new Point(190, 493);
-            buttonTest.Margin = new Padding(2);
+            buttonTest.Margin = new Padding(2, 2, 2, 2);
             buttonTest.Name = "buttonTest";
             buttonTest.Size = new Size(78, 25);
             buttonTest.TabIndex = 15;
@@ -996,10 +978,10 @@
             groupBoxBarColor.Controls.Add(rbBarColorYellow);
             groupBoxBarColor.Controls.Add(rbBarColorGray);
             groupBoxBarColor.Controls.Add(rbBarColorBlue);
-            groupBoxBarColor.Location = new Point(340, 324);
-            groupBoxBarColor.Margin = new Padding(2);
+            groupBoxBarColor.Location = new Point(343, 324);
+            groupBoxBarColor.Margin = new Padding(2, 2, 2, 2);
             groupBoxBarColor.Name = "groupBoxBarColor";
-            groupBoxBarColor.Padding = new Padding(2);
+            groupBoxBarColor.Padding = new Padding(2, 2, 2, 2);
             groupBoxBarColor.Size = new Size(222, 114);
             groupBoxBarColor.TabIndex = 4;
             groupBoxBarColor.TabStop = false;
@@ -1009,7 +991,7 @@
             // 
             rbBarColorNone.AutoSize = true;
             rbBarColorNone.Location = new Point(27, 84);
-            rbBarColorNone.Margin = new Padding(2);
+            rbBarColorNone.Margin = new Padding(2, 2, 2, 2);
             rbBarColorNone.Name = "rbBarColorNone";
             rbBarColorNone.Size = new Size(86, 19);
             rbBarColorNone.TabIndex = 6;
@@ -1021,7 +1003,7 @@
             rbBarColorDefault.AutoSize = true;
             rbBarColorDefault.Checked = true;
             rbBarColorDefault.Location = new Point(27, 24);
-            rbBarColorDefault.Margin = new Padding(2);
+            rbBarColorDefault.Margin = new Padding(2, 2, 2, 2);
             rbBarColorDefault.Name = "rbBarColorDefault";
             rbBarColorDefault.Size = new Size(63, 19);
             rbBarColorDefault.TabIndex = 0;
@@ -1033,7 +1015,7 @@
             // 
             rbBarColorGreen.AutoSize = true;
             rbBarColorGreen.Location = new Point(103, 24);
-            rbBarColorGreen.Margin = new Padding(2);
+            rbBarColorGreen.Margin = new Padding(2, 2, 2, 2);
             rbBarColorGreen.Name = "rbBarColorGreen";
             rbBarColorGreen.Size = new Size(56, 19);
             rbBarColorGreen.TabIndex = 1;
@@ -1044,7 +1026,7 @@
             // 
             rbBarColorRed.AutoSize = true;
             rbBarColorRed.Location = new Point(27, 64);
-            rbBarColorRed.Margin = new Padding(2);
+            rbBarColorRed.Margin = new Padding(2, 2, 2, 2);
             rbBarColorRed.Name = "rbBarColorRed";
             rbBarColorRed.Size = new Size(45, 19);
             rbBarColorRed.TabIndex = 4;
@@ -1055,7 +1037,7 @@
             // 
             rbBarColorYellow.AutoSize = true;
             rbBarColorYellow.Location = new Point(103, 44);
-            rbBarColorYellow.Margin = new Padding(2);
+            rbBarColorYellow.Margin = new Padding(2, 2, 2, 2);
             rbBarColorYellow.Name = "rbBarColorYellow";
             rbBarColorYellow.Size = new Size(59, 19);
             rbBarColorYellow.TabIndex = 3;
@@ -1066,7 +1048,7 @@
             // 
             rbBarColorGray.AutoSize = true;
             rbBarColorGray.Location = new Point(27, 44);
-            rbBarColorGray.Margin = new Padding(2);
+            rbBarColorGray.Margin = new Padding(2, 2, 2, 2);
             rbBarColorGray.Name = "rbBarColorGray";
             rbBarColorGray.Size = new Size(49, 19);
             rbBarColorGray.TabIndex = 2;
@@ -1077,7 +1059,7 @@
             // 
             rbBarColorBlue.AutoSize = true;
             rbBarColorBlue.Location = new Point(103, 64);
-            rbBarColorBlue.Margin = new Padding(2);
+            rbBarColorBlue.Margin = new Padding(2, 2, 2, 2);
             rbBarColorBlue.Name = "rbBarColorBlue";
             rbBarColorBlue.Size = new Size(48, 19);
             rbBarColorBlue.TabIndex = 5;
@@ -1089,10 +1071,10 @@
             groupBoxCustomIconMainID.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             groupBoxCustomIconMainID.Controls.Add(textBoxCustomIconMainID);
             groupBoxCustomIconMainID.Enabled = false;
-            groupBoxCustomIconMainID.Location = new Point(333, 461);
-            groupBoxCustomIconMainID.Margin = new Padding(2);
+            groupBoxCustomIconMainID.Location = new Point(337, 461);
+            groupBoxCustomIconMainID.Margin = new Padding(2, 2, 2, 2);
             groupBoxCustomIconMainID.Name = "groupBoxCustomIconMainID";
-            groupBoxCustomIconMainID.Padding = new Padding(2);
+            groupBoxCustomIconMainID.Padding = new Padding(2, 2, 2, 2);
             groupBoxCustomIconMainID.Size = new Size(145, 55);
             groupBoxCustomIconMainID.TabIndex = 17;
             groupBoxCustomIconMainID.TabStop = false;
@@ -1101,7 +1083,7 @@
             // textBoxCustomIconMainID
             // 
             textBoxCustomIconMainID.Location = new Point(15, 23);
-            textBoxCustomIconMainID.Margin = new Padding(2);
+            textBoxCustomIconMainID.Margin = new Padding(2, 2, 2, 2);
             textBoxCustomIconMainID.Name = "textBoxCustomIconMainID";
             textBoxCustomIconMainID.Size = new Size(125, 23);
             textBoxCustomIconMainID.TabIndex = 0;
@@ -1128,7 +1110,7 @@
             // textBoxVerification
             // 
             textBoxVerification.Location = new Point(128, 2);
-            textBoxVerification.Margin = new Padding(2);
+            textBoxVerification.Margin = new Padding(2, 2, 2, 2);
             textBoxVerification.Name = "textBoxVerification";
             textBoxVerification.PlaceholderText = " Don't ask again";
             textBoxVerification.Size = new Size(176, 23);
@@ -1138,7 +1120,7 @@
             // 
             buttonImageResIcons.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             buttonImageResIcons.Location = new Point(169, 543);
-            buttonImageResIcons.Margin = new Padding(2);
+            buttonImageResIcons.Margin = new Padding(2, 2, 2, 2);
             buttonImageResIcons.Name = "buttonImageResIcons";
             buttonImageResIcons.Size = new Size(120, 27);
             buttonImageResIcons.TabIndex = 1;
@@ -1193,10 +1175,10 @@
             groupBoxCustomIconTitleID.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             groupBoxCustomIconTitleID.Controls.Add(textBoxCustomIconTitleID);
             groupBoxCustomIconTitleID.Enabled = false;
-            groupBoxCustomIconTitleID.Location = new Point(333, 520);
-            groupBoxCustomIconTitleID.Margin = new Padding(2);
+            groupBoxCustomIconTitleID.Location = new Point(337, 520);
+            groupBoxCustomIconTitleID.Margin = new Padding(2, 2, 2, 2);
             groupBoxCustomIconTitleID.Name = "groupBoxCustomIconTitleID";
-            groupBoxCustomIconTitleID.Padding = new Padding(2);
+            groupBoxCustomIconTitleID.Padding = new Padding(2, 2, 2, 2);
             groupBoxCustomIconTitleID.Size = new Size(145, 55);
             groupBoxCustomIconTitleID.TabIndex = 19;
             groupBoxCustomIconTitleID.TabStop = false;
@@ -1205,7 +1187,7 @@
             // textBoxCustomIconTitleID
             // 
             textBoxCustomIconTitleID.Location = new Point(15, 23);
-            textBoxCustomIconTitleID.Margin = new Padding(2);
+            textBoxCustomIconTitleID.Margin = new Padding(2, 2, 2, 2);
             textBoxCustomIconTitleID.Name = "textBoxCustomIconTitleID";
             textBoxCustomIconTitleID.Size = new Size(125, 23);
             textBoxCustomIconTitleID.TabIndex = 2;
@@ -1217,10 +1199,10 @@
             groupBoxCustomIconTitleFile.Controls.Add(textBoxCustomIconTitlePath);
             groupBoxCustomIconTitleFile.Controls.Add(buttonBrowseCustomIconTitle);
             groupBoxCustomIconTitleFile.Enabled = false;
-            groupBoxCustomIconTitleFile.Location = new Point(482, 520);
-            groupBoxCustomIconTitleFile.Margin = new Padding(2);
+            groupBoxCustomIconTitleFile.Location = new Point(486, 520);
+            groupBoxCustomIconTitleFile.Margin = new Padding(2, 2, 2, 2);
             groupBoxCustomIconTitleFile.Name = "groupBoxCustomIconTitleFile";
-            groupBoxCustomIconTitleFile.Padding = new Padding(2);
+            groupBoxCustomIconTitleFile.Padding = new Padding(2, 2, 2, 2);
             groupBoxCustomIconTitleFile.Size = new Size(318, 55);
             groupBoxCustomIconTitleFile.TabIndex = 18;
             groupBoxCustomIconTitleFile.TabStop = false;
@@ -1229,7 +1211,7 @@
             // textBoxCustomIconTitlePath
             // 
             textBoxCustomIconTitlePath.Location = new Point(9, 23);
-            textBoxCustomIconTitlePath.Margin = new Padding(2);
+            textBoxCustomIconTitlePath.Margin = new Padding(2, 2, 2, 2);
             textBoxCustomIconTitlePath.Name = "textBoxCustomIconTitlePath";
             textBoxCustomIconTitlePath.Size = new Size(225, 23);
             textBoxCustomIconTitlePath.TabIndex = 3;
@@ -1237,7 +1219,7 @@
             // buttonBrowseCustomIconTitle
             // 
             buttonBrowseCustomIconTitle.Location = new Point(236, 20);
-            buttonBrowseCustomIconTitle.Margin = new Padding(2);
+            buttonBrowseCustomIconTitle.Margin = new Padding(2, 2, 2, 2);
             buttonBrowseCustomIconTitle.Name = "buttonBrowseCustomIconTitle";
             buttonBrowseCustomIconTitle.Size = new Size(78, 26);
             buttonBrowseCustomIconTitle.TabIndex = 13;
@@ -1249,7 +1231,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(819, 587);
+            ClientSize = new Size(822, 587);
             Controls.Add(groupBoxCustomIconTitleID);
             Controls.Add(groupBoxCustomIconTitleFile);
             Controls.Add(labelVersion);
@@ -1270,12 +1252,8 @@
             gbButtons.ResumeLayout(false);
             flowButtons.ResumeLayout(false);
             flowButtons.PerformLayout();
-            flowCustom1.ResumeLayout(false);
-            flowCustom1.PerformLayout();
-            flowCustom2.ResumeLayout(false);
-            flowCustom2.PerformLayout();
-            flowCustom3.ResumeLayout(false);
-            flowCustom3.PerformLayout();
+            tableLayoutCustom.ResumeLayout(false);
+            tableLayoutCustom.PerformLayout();
             gbIconMain.ResumeLayout(false);
             gbIconMain.PerformLayout();
             splitContainer1.Panel1.ResumeLayout(false);
@@ -1386,12 +1364,10 @@
         private CheckBox checkCustom1Visibility;
         private CheckBox checkCustom2Visibility;
         private FlowLayoutPanel flowButtons;
-        private FlowLayoutPanel flowCustom1;
-        private FlowLayoutPanel flowCustom2;
         private TextBox textBoxCustom2;
-        private FlowLayoutPanel flowCustom3;
         private CheckBox checkCustom3Visibility;
         private TextBox textBoxCustom3;
         private ToolTip toolTip1;
+        private TableLayoutPanel tableLayoutCustom;
     }
 }
