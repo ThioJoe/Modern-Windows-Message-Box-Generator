@@ -17,6 +17,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Extras\**" />
+    <EmbeddedResource Remove="Extras\**" />
+    <None Remove="Extras\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Remove="ManualTaskDialog.cs" />
     <Compile Remove="TaskDialogIconExtractor.cs" />
   </ItemGroup>
