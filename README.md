@@ -7,6 +7,7 @@
 ## Key Features
 
 - **Set Any Text**: Choose the text to display for each element, or leave it blank to not show that part.
+- **Custom Buttons**: Display up to 3 buttons with custom text, and set whether they appear enabled or disabled.
 - **Choose Icons:**
     - Select from a range of default icons for both the main icon and title bar icon.
     - Use custom icons from image files. Including image files, icon files, or the icon associated with any Exe file.
