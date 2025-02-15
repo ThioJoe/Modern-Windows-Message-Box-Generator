@@ -148,10 +148,19 @@ namespace Windows_Task_Dialog_Generator
             containerPanel.Controls.Add(pictureBox);
             containerPanel.Controls.Add(iconLabel);
 
-            this.Invoke(() =>
+            try
             {
-                flowLayoutPanelMain.Controls.Add(containerPanel);
-            });
+                this.Invoke(() =>
+                {
+                    // Ensure the form is not disposed already
+                    if ( !flowLayoutPanelMain.IsDisposed )
+                        flowLayoutPanelMain.Controls.Add(containerPanel);
+                });
+            }
+            catch ( ObjectDisposedException ) // If the other form was closed before finished adding. For some reason checking IsDisposed isn't enough
+            {
+                Debug.WriteLine("Caught trying to invoke while form was disposed");
+            }
         }
 
         private void OnPanelClick(object? sender, int iconIndex)
