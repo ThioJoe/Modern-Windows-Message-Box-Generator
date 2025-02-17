@@ -115,6 +115,13 @@
             textBoxCustomIconTitlePath = new TextBox();
             buttonBrowseCustomIconTitle = new Button();
             toolTip1 = new ToolTip(components);
+            btnAbout = new Button();
+            cbPresets = new ComboBox();
+            btnPresetLoad = new Button();
+            btnPresetSave = new Button();
+            groupBox1 = new GroupBox();
+            button2 = new Button();
+            button1 = new Button();
             gbButtons.SuspendLayout();
             flowButtons.SuspendLayout();
             tableLayoutCustom.SuspendLayout();
@@ -132,6 +139,7 @@
             flowLayoutPanelVerification.SuspendLayout();
             groupBoxCustomIconTitleID.SuspendLayout();
             groupBoxCustomIconTitleFile.SuspendLayout();
+            groupBox1.SuspendLayout();
             SuspendLayout();
             // 
             // txtTitle
@@ -156,7 +164,7 @@
             lblTitle.Location = new Point(5, 5);
             lblTitle.Margin = new Padding(5, 5, 5, 2);
             lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(33, 15);
+            lblTitle.Size = new Size(32, 15);
             lblTitle.TabIndex = 0;
             lblTitle.Text = "Title:";
             // 
@@ -194,7 +202,7 @@
             flowButtons.Dock = DockStyle.Fill;
             flowButtons.FlowDirection = FlowDirection.TopDown;
             flowButtons.Location = new Point(3, 19);
-            flowButtons.Margin = new Padding(2, 2, 2, 2);
+            flowButtons.Margin = new Padding(2);
             flowButtons.Name = "flowButtons";
             flowButtons.Size = new Size(217, 284);
             flowButtons.TabIndex = 24;
@@ -389,7 +397,7 @@
             labelSelectTitleIcon.AutoSize = true;
             labelSelectTitleIcon.Location = new Point(6, 21);
             labelSelectTitleIcon.Name = "labelSelectTitleIcon";
-            labelSelectTitleIcon.Size = new Size(50, 15);
+            labelSelectTitleIcon.Size = new Size(49, 15);
             labelSelectTitleIcon.TabIndex = 26;
             labelSelectTitleIcon.Text = "Title Bar";
             // 
@@ -908,7 +916,7 @@
             lblExpandedInfo.Location = new Point(5, 213);
             lblExpandedInfo.Margin = new Padding(5, 5, 5, 2);
             lblExpandedInfo.Name = "lblExpandedInfo";
-            lblExpandedInfo.Size = new Size(124, 15);
+            lblExpandedInfo.Size = new Size(125, 15);
             lblExpandedInfo.TabIndex = 8;
             lblExpandedInfo.Text = "Expanded Information";
             // 
@@ -924,7 +932,7 @@
             // textBoxCustomIconMainPath
             // 
             textBoxCustomIconMainPath.Location = new Point(9, 23);
-            textBoxCustomIconMainPath.Margin = new Padding(2, 2, 2, 2);
+            textBoxCustomIconMainPath.Margin = new Padding(2);
             textBoxCustomIconMainPath.Name = "textBoxCustomIconMainPath";
             textBoxCustomIconMainPath.Size = new Size(225, 23);
             textBoxCustomIconMainPath.TabIndex = 1;
@@ -932,7 +940,7 @@
             // buttonBrowseCustomIconMain
             // 
             buttonBrowseCustomIconMain.Location = new Point(236, 20);
-            buttonBrowseCustomIconMain.Margin = new Padding(2, 2, 2, 2);
+            buttonBrowseCustomIconMain.Margin = new Padding(2);
             buttonBrowseCustomIconMain.Name = "buttonBrowseCustomIconMain";
             buttonBrowseCustomIconMain.Size = new Size(78, 26);
             buttonBrowseCustomIconMain.TabIndex = 13;
@@ -947,9 +955,9 @@
             groupBoxCustomIconMainFile.Controls.Add(buttonBrowseCustomIconMain);
             groupBoxCustomIconMainFile.Enabled = false;
             groupBoxCustomIconMainFile.Location = new Point(486, 461);
-            groupBoxCustomIconMainFile.Margin = new Padding(2, 2, 2, 2);
+            groupBoxCustomIconMainFile.Margin = new Padding(2);
             groupBoxCustomIconMainFile.Name = "groupBoxCustomIconMainFile";
-            groupBoxCustomIconMainFile.Padding = new Padding(2, 2, 2, 2);
+            groupBoxCustomIconMainFile.Padding = new Padding(2);
             groupBoxCustomIconMainFile.Size = new Size(318, 55);
             groupBoxCustomIconMainFile.TabIndex = 14;
             groupBoxCustomIconMainFile.TabStop = false;
@@ -958,10 +966,10 @@
             // buttonTest
             // 
             buttonTest.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            buttonTest.Location = new Point(190, 493);
-            buttonTest.Margin = new Padding(2, 2, 2, 2);
+            buttonTest.Location = new Point(220, 506);
+            buttonTest.Margin = new Padding(2);
             buttonTest.Name = "buttonTest";
-            buttonTest.Size = new Size(78, 25);
+            buttonTest.Size = new Size(78, 27);
             buttonTest.TabIndex = 15;
             buttonTest.Text = "Test";
             buttonTest.UseVisualStyleBackColor = true;
@@ -979,9 +987,9 @@
             groupBoxBarColor.Controls.Add(rbBarColorGray);
             groupBoxBarColor.Controls.Add(rbBarColorBlue);
             groupBoxBarColor.Location = new Point(343, 324);
-            groupBoxBarColor.Margin = new Padding(2, 2, 2, 2);
+            groupBoxBarColor.Margin = new Padding(2);
             groupBoxBarColor.Name = "groupBoxBarColor";
-            groupBoxBarColor.Padding = new Padding(2, 2, 2, 2);
+            groupBoxBarColor.Padding = new Padding(2);
             groupBoxBarColor.Size = new Size(222, 114);
             groupBoxBarColor.TabIndex = 4;
             groupBoxBarColor.TabStop = false;
@@ -991,7 +999,7 @@
             // 
             rbBarColorNone.AutoSize = true;
             rbBarColorNone.Location = new Point(27, 84);
-            rbBarColorNone.Margin = new Padding(2, 2, 2, 2);
+            rbBarColorNone.Margin = new Padding(2);
             rbBarColorNone.Name = "rbBarColorNone";
             rbBarColorNone.Size = new Size(86, 19);
             rbBarColorNone.TabIndex = 6;
@@ -1003,7 +1011,7 @@
             rbBarColorDefault.AutoSize = true;
             rbBarColorDefault.Checked = true;
             rbBarColorDefault.Location = new Point(27, 24);
-            rbBarColorDefault.Margin = new Padding(2, 2, 2, 2);
+            rbBarColorDefault.Margin = new Padding(2);
             rbBarColorDefault.Name = "rbBarColorDefault";
             rbBarColorDefault.Size = new Size(63, 19);
             rbBarColorDefault.TabIndex = 0;
@@ -1015,7 +1023,7 @@
             // 
             rbBarColorGreen.AutoSize = true;
             rbBarColorGreen.Location = new Point(103, 24);
-            rbBarColorGreen.Margin = new Padding(2, 2, 2, 2);
+            rbBarColorGreen.Margin = new Padding(2);
             rbBarColorGreen.Name = "rbBarColorGreen";
             rbBarColorGreen.Size = new Size(56, 19);
             rbBarColorGreen.TabIndex = 1;
@@ -1026,7 +1034,7 @@
             // 
             rbBarColorRed.AutoSize = true;
             rbBarColorRed.Location = new Point(27, 64);
-            rbBarColorRed.Margin = new Padding(2, 2, 2, 2);
+            rbBarColorRed.Margin = new Padding(2);
             rbBarColorRed.Name = "rbBarColorRed";
             rbBarColorRed.Size = new Size(45, 19);
             rbBarColorRed.TabIndex = 4;
@@ -1037,7 +1045,7 @@
             // 
             rbBarColorYellow.AutoSize = true;
             rbBarColorYellow.Location = new Point(103, 44);
-            rbBarColorYellow.Margin = new Padding(2, 2, 2, 2);
+            rbBarColorYellow.Margin = new Padding(2);
             rbBarColorYellow.Name = "rbBarColorYellow";
             rbBarColorYellow.Size = new Size(59, 19);
             rbBarColorYellow.TabIndex = 3;
@@ -1048,7 +1056,7 @@
             // 
             rbBarColorGray.AutoSize = true;
             rbBarColorGray.Location = new Point(27, 44);
-            rbBarColorGray.Margin = new Padding(2, 2, 2, 2);
+            rbBarColorGray.Margin = new Padding(2);
             rbBarColorGray.Name = "rbBarColorGray";
             rbBarColorGray.Size = new Size(49, 19);
             rbBarColorGray.TabIndex = 2;
@@ -1059,7 +1067,7 @@
             // 
             rbBarColorBlue.AutoSize = true;
             rbBarColorBlue.Location = new Point(103, 64);
-            rbBarColorBlue.Margin = new Padding(2, 2, 2, 2);
+            rbBarColorBlue.Margin = new Padding(2);
             rbBarColorBlue.Name = "rbBarColorBlue";
             rbBarColorBlue.Size = new Size(48, 19);
             rbBarColorBlue.TabIndex = 5;
@@ -1072,9 +1080,9 @@
             groupBoxCustomIconMainID.Controls.Add(textBoxCustomIconMainID);
             groupBoxCustomIconMainID.Enabled = false;
             groupBoxCustomIconMainID.Location = new Point(337, 461);
-            groupBoxCustomIconMainID.Margin = new Padding(2, 2, 2, 2);
+            groupBoxCustomIconMainID.Margin = new Padding(2);
             groupBoxCustomIconMainID.Name = "groupBoxCustomIconMainID";
-            groupBoxCustomIconMainID.Padding = new Padding(2, 2, 2, 2);
+            groupBoxCustomIconMainID.Padding = new Padding(2);
             groupBoxCustomIconMainID.Size = new Size(145, 55);
             groupBoxCustomIconMainID.TabIndex = 17;
             groupBoxCustomIconMainID.TabStop = false;
@@ -1083,7 +1091,7 @@
             // textBoxCustomIconMainID
             // 
             textBoxCustomIconMainID.Location = new Point(15, 23);
-            textBoxCustomIconMainID.Margin = new Padding(2, 2, 2, 2);
+            textBoxCustomIconMainID.Margin = new Padding(2);
             textBoxCustomIconMainID.Name = "textBoxCustomIconMainID";
             textBoxCustomIconMainID.Size = new Size(125, 23);
             textBoxCustomIconMainID.TabIndex = 0;
@@ -1110,7 +1118,7 @@
             // textBoxVerification
             // 
             textBoxVerification.Location = new Point(128, 2);
-            textBoxVerification.Margin = new Padding(2, 2, 2, 2);
+            textBoxVerification.Margin = new Padding(2);
             textBoxVerification.Name = "textBoxVerification";
             textBoxVerification.PlaceholderText = " Don't ask again";
             textBoxVerification.Size = new Size(176, 23);
@@ -1119,8 +1127,8 @@
             // buttonImageResIcons
             // 
             buttonImageResIcons.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            buttonImageResIcons.Location = new Point(169, 543);
-            buttonImageResIcons.Margin = new Padding(2, 2, 2, 2);
+            buttonImageResIcons.Location = new Point(199, 540);
+            buttonImageResIcons.Margin = new Padding(2);
             buttonImageResIcons.Name = "buttonImageResIcons";
             buttonImageResIcons.Size = new Size(120, 27);
             buttonImageResIcons.TabIndex = 1;
@@ -1144,7 +1152,7 @@
             flowLayoutPanelDialogContents.FlowDirection = FlowDirection.TopDown;
             flowLayoutPanelDialogContents.Location = new Point(12, 13);
             flowLayoutPanelDialogContents.Name = "flowLayoutPanelDialogContents";
-            flowLayoutPanelDialogContents.Size = new Size(317, 425);
+            flowLayoutPanelDialogContents.Size = new Size(317, 394);
             flowLayoutPanelDialogContents.TabIndex = 2;
             flowLayoutPanelDialogContents.WrapContents = false;
             // 
@@ -1166,9 +1174,9 @@
             labelVersion.ForeColor = SystemColors.WindowFrame;
             labelVersion.Location = new Point(16, 512);
             labelVersion.Name = "labelVersion";
-            labelVersion.Size = new Size(51, 15);
+            labelVersion.Size = new Size(103, 15);
             labelVersion.TabIndex = 23;
-            labelVersion.Text = "Version: ";
+            labelVersion.Text = "Version: Loading...";
             // 
             // groupBoxCustomIconTitleID
             // 
@@ -1176,9 +1184,9 @@
             groupBoxCustomIconTitleID.Controls.Add(textBoxCustomIconTitleID);
             groupBoxCustomIconTitleID.Enabled = false;
             groupBoxCustomIconTitleID.Location = new Point(337, 520);
-            groupBoxCustomIconTitleID.Margin = new Padding(2, 2, 2, 2);
+            groupBoxCustomIconTitleID.Margin = new Padding(2);
             groupBoxCustomIconTitleID.Name = "groupBoxCustomIconTitleID";
-            groupBoxCustomIconTitleID.Padding = new Padding(2, 2, 2, 2);
+            groupBoxCustomIconTitleID.Padding = new Padding(2);
             groupBoxCustomIconTitleID.Size = new Size(145, 55);
             groupBoxCustomIconTitleID.TabIndex = 19;
             groupBoxCustomIconTitleID.TabStop = false;
@@ -1187,7 +1195,7 @@
             // textBoxCustomIconTitleID
             // 
             textBoxCustomIconTitleID.Location = new Point(15, 23);
-            textBoxCustomIconTitleID.Margin = new Padding(2, 2, 2, 2);
+            textBoxCustomIconTitleID.Margin = new Padding(2);
             textBoxCustomIconTitleID.Name = "textBoxCustomIconTitleID";
             textBoxCustomIconTitleID.Size = new Size(125, 23);
             textBoxCustomIconTitleID.TabIndex = 2;
@@ -1200,9 +1208,9 @@
             groupBoxCustomIconTitleFile.Controls.Add(buttonBrowseCustomIconTitle);
             groupBoxCustomIconTitleFile.Enabled = false;
             groupBoxCustomIconTitleFile.Location = new Point(486, 520);
-            groupBoxCustomIconTitleFile.Margin = new Padding(2, 2, 2, 2);
+            groupBoxCustomIconTitleFile.Margin = new Padding(2);
             groupBoxCustomIconTitleFile.Name = "groupBoxCustomIconTitleFile";
-            groupBoxCustomIconTitleFile.Padding = new Padding(2, 2, 2, 2);
+            groupBoxCustomIconTitleFile.Padding = new Padding(2);
             groupBoxCustomIconTitleFile.Size = new Size(318, 55);
             groupBoxCustomIconTitleFile.TabIndex = 18;
             groupBoxCustomIconTitleFile.TabStop = false;
@@ -1211,7 +1219,7 @@
             // textBoxCustomIconTitlePath
             // 
             textBoxCustomIconTitlePath.Location = new Point(9, 23);
-            textBoxCustomIconTitlePath.Margin = new Padding(2, 2, 2, 2);
+            textBoxCustomIconTitlePath.Margin = new Padding(2);
             textBoxCustomIconTitlePath.Name = "textBoxCustomIconTitlePath";
             textBoxCustomIconTitlePath.Size = new Size(225, 23);
             textBoxCustomIconTitlePath.TabIndex = 3;
@@ -1219,7 +1227,7 @@
             // buttonBrowseCustomIconTitle
             // 
             buttonBrowseCustomIconTitle.Location = new Point(236, 20);
-            buttonBrowseCustomIconTitle.Margin = new Padding(2, 2, 2, 2);
+            buttonBrowseCustomIconTitle.Margin = new Padding(2);
             buttonBrowseCustomIconTitle.Name = "buttonBrowseCustomIconTitle";
             buttonBrowseCustomIconTitle.Size = new Size(78, 26);
             buttonBrowseCustomIconTitle.TabIndex = 13;
@@ -1227,11 +1235,87 @@
             buttonBrowseCustomIconTitle.UseVisualStyleBackColor = true;
             buttonBrowseCustomIconTitle.Click += buttonBrowseCustomIconTitle_Click;
             // 
+            // btnAbout
+            // 
+            btnAbout.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            btnAbout.Image = Windows_Task_Dialog_Generator.Properties.Resources.info_circle_fill_black_16x16;
+            btnAbout.Location = new Point(158, 538);
+            btnAbout.Name = "btnAbout";
+            btnAbout.Size = new Size(33, 32);
+            btnAbout.TabIndex = 24;
+            toolTip1.SetToolTip(btnAbout, "About Task Dialog Generator...");
+            btnAbout.UseVisualStyleBackColor = true;
+            btnAbout.Click += btnAbout_Click;
+            // 
+            // cbPresets
+            // 
+            cbPresets.FormattingEnabled = true;
+            cbPresets.Location = new Point(6, 22);
+            cbPresets.Name = "cbPresets";
+            cbPresets.Size = new Size(301, 23);
+            cbPresets.TabIndex = 25;
+            // 
+            // btnPresetLoad
+            // 
+            btnPresetLoad.Location = new Point(62, 51);
+            btnPresetLoad.Name = "btnPresetLoad";
+            btnPresetLoad.Size = new Size(50, 23);
+            btnPresetLoad.TabIndex = 27;
+            btnPresetLoad.Text = "Load";
+            btnPresetLoad.UseVisualStyleBackColor = true;
+            btnPresetLoad.Click += btnPresetLoad_Click;
+            // 
+            // btnPresetSave
+            // 
+            btnPresetSave.Location = new Point(6, 51);
+            btnPresetSave.Name = "btnPresetSave";
+            btnPresetSave.Size = new Size(50, 23);
+            btnPresetSave.TabIndex = 27;
+            btnPresetSave.Text = "Save";
+            btnPresetSave.UseVisualStyleBackColor = true;
+            btnPresetSave.Click += btnPresetSave_Click;
+            // 
+            // groupBox1
+            // 
+            groupBox1.Controls.Add(btnPresetSave);
+            groupBox1.Controls.Add(cbPresets);
+            groupBox1.Controls.Add(button2);
+            groupBox1.Controls.Add(button1);
+            groupBox1.Controls.Add(btnPresetLoad);
+            groupBox1.Location = new Point(12, 413);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(317, 88);
+            groupBox1.TabIndex = 28;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Presets";
+            // 
+            // button2
+            // 
+            button2.Location = new Point(246, 51);
+            button2.Name = "button2";
+            button2.Size = new Size(61, 23);
+            button2.TabIndex = 27;
+            button2.Text = "Delete";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += btnPresetLoad_Click;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(179, 51);
+            button1.Name = "button1";
+            button1.Size = new Size(61, 23);
+            button1.TabIndex = 27;
+            button1.Text = "Update";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += btnPresetLoad_Click;
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(822, 587);
+            Controls.Add(groupBox1);
+            Controls.Add(btnAbout);
             Controls.Add(groupBoxCustomIconTitleID);
             Controls.Add(groupBoxCustomIconTitleFile);
             Controls.Add(labelVersion);
@@ -1278,6 +1362,7 @@
             groupBoxCustomIconTitleID.PerformLayout();
             groupBoxCustomIconTitleFile.ResumeLayout(false);
             groupBoxCustomIconTitleFile.PerformLayout();
+            groupBox1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -1369,5 +1454,12 @@
         private TextBox textBoxCustom3;
         private ToolTip toolTip1;
         private TableLayoutPanel tableLayoutCustom;
+        private Button btnAbout;
+        private ComboBox cbPresets;
+        private Button btnPresetLoad;
+        private Button btnPresetSave;
+        private GroupBox groupBox1;
+        private Button button2;
+        private Button button1;
     }
 }
