@@ -120,8 +120,8 @@
             btnPresetLoad = new Button();
             btnPresetSave = new Button();
             groupBox1 = new GroupBox();
-            button2 = new Button();
-            button1 = new Button();
+            btnPresetDelete = new Button();
+            btnPresetUpdate = new Button();
             gbButtons.SuspendLayout();
             flowButtons.SuspendLayout();
             tableLayoutCustom.SuspendLayout();
@@ -1238,7 +1238,7 @@
             // btnAbout
             // 
             btnAbout.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            btnAbout.Image = Windows_Task_Dialog_Generator.Properties.Resources.info_circle_fill_black_16x16;
+            btnAbout.Image = Properties.Resources.info_circle_fill_black_16x16;
             btnAbout.Location = new Point(158, 538);
             btnAbout.Name = "btnAbout";
             btnAbout.Size = new Size(33, 32);
@@ -1279,8 +1279,8 @@
             // 
             groupBox1.Controls.Add(btnPresetSave);
             groupBox1.Controls.Add(cbPresets);
-            groupBox1.Controls.Add(button2);
-            groupBox1.Controls.Add(button1);
+            groupBox1.Controls.Add(btnPresetDelete);
+            groupBox1.Controls.Add(btnPresetUpdate);
             groupBox1.Controls.Add(btnPresetLoad);
             groupBox1.Location = new Point(12, 413);
             groupBox1.Name = "groupBox1";
@@ -1289,25 +1289,25 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Presets";
             // 
-            // button2
+            // btnPresetDelete
             // 
-            button2.Location = new Point(246, 51);
-            button2.Name = "button2";
-            button2.Size = new Size(61, 23);
-            button2.TabIndex = 27;
-            button2.Text = "Delete";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += btnPresetLoad_Click;
+            btnPresetDelete.Location = new Point(239, 51);
+            btnPresetDelete.Name = "btnPresetDelete";
+            btnPresetDelete.Size = new Size(70, 23);
+            btnPresetDelete.TabIndex = 27;
+            btnPresetDelete.Text = "Delete";
+            btnPresetDelete.UseVisualStyleBackColor = true;
+            btnPresetDelete.Click += btnPresetDelete_Click;
             // 
-            // button1
+            // btnPresetUpdate
             // 
-            button1.Location = new Point(179, 51);
-            button1.Name = "button1";
-            button1.Size = new Size(61, 23);
-            button1.TabIndex = 27;
-            button1.Text = "Update";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += btnPresetLoad_Click;
+            btnPresetUpdate.Location = new Point(163, 51);
+            btnPresetUpdate.Name = "btnPresetUpdate";
+            btnPresetUpdate.Size = new Size(70, 23);
+            btnPresetUpdate.TabIndex = 27;
+            btnPresetUpdate.Text = "Update";
+            btnPresetUpdate.UseVisualStyleBackColor = true;
+            btnPresetUpdate.Click += btnPresetUpdate_Click;
             // 
             // MainForm
             // 
@@ -1459,7 +1459,7 @@
         private Button btnPresetLoad;
         private Button btnPresetSave;
         private GroupBox groupBox1;
-        private Button button2;
-        private Button button1;
+        private Button btnPresetDelete;
+        private Button btnPresetUpdate;
     }
 }

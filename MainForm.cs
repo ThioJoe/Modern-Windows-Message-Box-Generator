@@ -31,6 +31,9 @@ namespace Windows_Task_Dialog_Generator
             if (Presets.Count == 0)
             {
                 cbPresets.Enabled = false;
+                btnPresetUpdate.Enabled = false;
+                btnPresetLoad.Enabled = false;
+                btnPresetDelete.Enabled = false;
             }
             else
             {
@@ -969,7 +972,11 @@ namespace Windows_Task_Dialog_Generator
         {
             Presets.Add(name, preset);
             cbPresets.Enabled = true;
+            btnPresetDelete.Enabled = true;
+            btnPresetUpdate.Enabled = true;
+            btnPresetLoad.Enabled = true;
             cbPresets.Items.Add(name);
+            cbPresets.SelectedIndex = cbPresets.Items.Count - 1;
         }
 
         private void btnPresetLoad_Click(object sender, EventArgs e)
@@ -997,6 +1004,82 @@ namespace Windows_Task_Dialog_Generator
                     SetSelectedMessageBoxButtonRadio(selectedPreset.Buttons);
                 }
 
+            }
+        }
+
+        private void btnPresetUpdate_Click(object sender, EventArgs e)
+        {
+            // check if selected preset is not empty or null if so try to get it from the presets list. if it exists then set the values of the preset to the value of different elements
+            if (cbPresets.SelectedIndex != -1)
+            {
+                string? selectedPresetName = cbPresets.SelectedItem?.ToString();
+                if (selectedPresetName == null)
+                {
+                    MessageBox.Show("Please select a valid preset. The one you selected is invalid/does not exist", "Unable to update preset", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                TaskDialogPreset? selectedPreset = Presets[selectedPresetName];
+                if (selectedPreset != null)
+                {
+                    selectedPreset.Title = txtTitle.Text;
+                    selectedPreset.Heading = txtHeading.Text;
+                    selectedPreset.Message = txtMessage.Text;
+                    selectedPreset.Footer = txtFooter.Text;
+                    selectedPreset.ExpandedInfo = txtExpandedInfo.Text;
+                    selectedPreset.ShowVerification = chkVerification.Checked;
+                    selectedPreset.VerificationMessage = textBoxVerification.Text;
+                    selectedPreset.Buttons = GetSelectedMessageBoxButton();
+
+                    // finally change the text of the update button to "updated!" and disable it for 5 seconds then re-enable it and change back to Update
+                    btnPresetUpdate.Text = "Updated!";
+                    btnPresetUpdate.Enabled = false;
+                    Task.Delay(1000).ContinueWith(_ =>
+                    {
+                        btnPresetUpdate.Invoke(new Action(() =>
+                        {
+                            btnPresetUpdate.Text = "Update";
+                            btnPresetUpdate.Enabled = true;
+                        }));
+                    });
+                }
+            }
+        }
+
+        private void btnPresetDelete_Click(object sender, EventArgs e)
+        {
+            // delete selected item from both presets list and the combobox
+            if (cbPresets.SelectedIndex != -1)
+            {
+                string? selectedPresetName = cbPresets.SelectedItem?.ToString();
+                if (selectedPresetName == null)
+                {
+                    MessageBox.Show("Please select a valid preset. The one you selected is invalid/does not exist", "Unable to delete preset", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                Presets.Remove(selectedPresetName);
+                cbPresets.Items.Remove(selectedPresetName);
+                if (cbPresets.Items.Count == 0)
+                {
+                    cbPresets.Enabled = false;
+                    btnPresetDelete.Enabled = false;
+                    btnPresetUpdate.Enabled = false;
+                    btnPresetLoad.Enabled = false;
+                }
+                else
+                {
+                    cbPresets.SelectedIndex = 0;
+                }
+
+                btnPresetDelete.Text = "Deleted!";
+                btnPresetDelete.Enabled = false;
+                Task.Delay(500).ContinueWith(_ =>
+                {
+                    btnPresetDelete.Invoke(new Action(() =>
+                    {
+                        btnPresetDelete.Text = "Delete";
+                        btnPresetDelete.Enabled = cbPresets.Items.Count > 0;
+                    }));
+                });
             }
         }
         // --------------------------------------------------------------------------------------
