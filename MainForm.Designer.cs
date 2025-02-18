@@ -1104,8 +1104,9 @@
             txtMessage.Location = new Point(5, 128);
             txtMessage.Margin = new Padding(5, 2, 5, 5);
             txtMessage.Name = "txtMessage";
-            txtMessage.Size = new Size(304, 23);
+            txtMessage.Size = new Size(304, 52);
             txtMessage.TabIndex = 2;
+            txtMessage.Multiline = true;
             // 
             // textBoxVerification
             // 
