@@ -17,7 +17,15 @@ namespace Windows_Task_Dialog_Generator
             InitializeComponent();
         }
 
-        public void DoClose()
+        public SavePresetPromptDialog(Point initialLocation)
+        {
+            InitializeComponent();
+
+            StartPosition = FormStartPosition.Manual;
+            Location = initialLocation;
+        }
+
+        public void ValidateAndClose()
         {
             if (PresetName() == "")
             {
@@ -29,7 +37,7 @@ namespace Windows_Task_Dialog_Generator
         }
         private void btnOk_Click(object sender, EventArgs e)
         {
-            DoClose();
+            ValidateAndClose();
         }
 
         public string PresetName()
@@ -42,7 +50,10 @@ namespace Windows_Task_Dialog_Generator
             if (e.KeyChar == (char)Keys.Enter)
             {
                 e.Handled = true;
-                DoClose();
+                ValidateAndClose();
+            } else if (e.KeyChar == (char)Keys.Escape) {
+                DialogResult = DialogResult.Cancel;
+                Close();
             }
         }
     }

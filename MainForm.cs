@@ -1,3 +1,4 @@
+using Newtonsoft.Json;
 using System.Diagnostics.Eventing.Reader;
 using System.Reflection;
 using System.Runtime.CompilerServices;
@@ -27,19 +28,6 @@ namespace Windows_Task_Dialog_Generator
             labelVersion.Text = "Version: " + VERSION;
 
             MinimumSize = Size; // Prevent resizing
-            // if length of presets is 0 then set cbPresets to disabled
-            if (Presets.Count == 0)
-            {
-                cbPresets.Enabled = false;
-                btnPresetUpdate.Enabled = false;
-                btnPresetLoad.Enabled = false;
-                btnPresetDelete.Enabled = false;
-            }
-            else
-            {
-                cbPresets.Items.AddRange(Presets.Keys.ToArray());
-                cbPresets.SelectedIndex = 0;
-            }
 #if DEBUG
             buttonTest.Visible = true;
 #endif
@@ -65,6 +53,64 @@ namespace Windows_Task_Dialog_Generator
                 {
                     rb.CheckedChanged += EnableDisableNecessaryButtonControls;
                 }
+            }
+
+            TryLoadPresets();
+
+            if (Presets.Count == 0)
+            {
+                cbPresets.Enabled = false;
+                btnPresetUpdate.Enabled = false;
+                btnPresetLoad.Enabled = false;
+                btnPresetDelete.Enabled = false;
+            }
+            else
+            {
+                cbPresets.Items.AddRange(Presets.Keys.ToArray());
+                cbPresets.SelectedIndex = 0;
+            }
+
+        }
+
+        public void TryLoadPresets()
+        {
+            // try to load presets from preferences TaskDialogPresets (string) into the presets combo box and presets dictionary
+            // if it fails, show a message box
+            try
+            {
+                string? presetsString = Properties.Settings.Default.TaskDialogPresets;
+                if (!string.IsNullOrEmpty(presetsString))
+                {
+                    var loadedPresets = JsonConvert.DeserializeObject<Dictionary<string, TaskDialogPreset>>(presetsString);
+                    if (loadedPresets != null)
+                    {
+                        Presets = loadedPresets;
+
+                        if (cbPresets.Items.Count > 0)
+                        {
+                            cbPresets.SelectedIndex = 0;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Failed to load presets: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        public void TrySavePresets()
+        {
+            // try to save presets to TaskDialogPresets in properties. if it fails, show a message box
+            try
+            {
+                string presetsString = JsonConvert.SerializeObject(Presets);
+                Properties.Settings.Default.TaskDialogPresets = presetsString;
+                Properties.Settings.Default.Save();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Failed to save presets: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -959,7 +1005,9 @@ namespace Windows_Task_Dialog_Generator
 
         private void btnPresetSave_Click(object sender, EventArgs e)
         {
-            SavePresetPromptDialog savePresetPromptDialog = new SavePresetPromptDialog();
+            Point location = groupBoxPresets.PointToScreen(Point.Empty);
+
+            SavePresetPromptDialog savePresetPromptDialog = new SavePresetPromptDialog(location);
 
             DialogResult result = savePresetPromptDialog.ShowDialog();
             if (result == DialogResult.OK)
@@ -1081,6 +1129,11 @@ namespace Windows_Task_Dialog_Generator
                     }));
                 });
             }
+        }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            TrySavePresets();
         }
         // --------------------------------------------------------------------------------------
     }
