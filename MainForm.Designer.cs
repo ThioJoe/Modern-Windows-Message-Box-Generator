@@ -1106,6 +1106,7 @@
             txtMessage.Name = "txtMessage";
             txtMessage.Size = new Size(304, 23);
             txtMessage.TabIndex = 2;
+            txtMessage.Multiline = true;
             // 
             // textBoxVerification
             // 
