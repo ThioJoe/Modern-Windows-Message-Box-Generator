@@ -32,9 +32,11 @@ namespace Windows_Task_Dialog_Generator
                 MessageBox.Show("Please enter a name for the preset.", "You missed something", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+
             DialogResult = DialogResult.OK;
             Close();
         }
+
         private void btnOk_Click(object sender, EventArgs e)
         {
             ValidateAndClose();
@@ -53,6 +55,7 @@ namespace Windows_Task_Dialog_Generator
                 ValidateAndClose();
             } else if (e.KeyChar == (char)Keys.Escape) {
                 DialogResult = DialogResult.Cancel;
+                e.Handled = true;
                 Close();
             }
         }

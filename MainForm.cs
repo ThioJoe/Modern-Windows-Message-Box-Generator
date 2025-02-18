@@ -1010,7 +1010,7 @@ namespace Windows_Task_Dialog_Generator
             SavePresetPromptDialog savePresetPromptDialog = new SavePresetPromptDialog(location);
 
             DialogResult result = savePresetPromptDialog.ShowDialog();
-            if (result == DialogResult.OK)
+            if (result == DialogResult.OK  && savePresetPromptDialog.PresetName() != "")
             {
                 AddPreset(savePresetPromptDialog.PresetName(), AssembleTaskDialogPreset());
             }
@@ -1018,6 +1018,12 @@ namespace Windows_Task_Dialog_Generator
 
         public void AddPreset(string name, TaskDialogPreset preset)
         {
+            // check if key is already in presets if so dont add it and display a messagebox
+            if (Presets.ContainsKey(name))
+            {
+                MessageBox.Show("A preset with the same name already exists. Please choose a different name", "Preset already exists", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             Presets.Add(name, preset);
             cbPresets.Enabled = true;
             btnPresetDelete.Enabled = true;
