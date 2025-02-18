@@ -50,7 +50,17 @@ namespace Windows_Task_Dialog_Generator
             // Ensure the form is hidden instead of closed to avoid having to reload everything
             // Doing this only after all the icons are loaded
             this.FormClosing += OnFormClosing;
+            this.KeyPress += OnKeyPress;
             LoadIcons();
+        }
+
+        private void OnKeyPress(object? sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Escape)
+            {
+                e.Handled = true;
+                Hide();
+            }
         }
 
         private async void LoadIcons()

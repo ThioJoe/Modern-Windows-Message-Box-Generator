@@ -19,6 +19,8 @@ namespace Windows_Task_Dialog_Generator
         public static string VERSION = "Error getting version";
         public static IDSelectionBox LastUsedIDTextBox = IDSelectionBox.None; // Use to decide where to put selected imagres Icon IDS
         public static Dictionary<string, TaskDialogPreset> Presets = new Dictionary<string, TaskDialogPreset>();
+        public static string DefaultDllIconPath = "imageres.dll";
+        public static string CustomDllIconPath = DefaultDllIconPath;
 
         public MainForm()
         {
@@ -283,7 +285,6 @@ namespace Windows_Task_Dialog_Generator
                 page = SetupMainIconUpdate(page);
             }
 
-            // Determine the title bar icon
             Icon? chosenTitlebarIcon;
             if (rbIconTitleSame.Checked)
             {
@@ -431,7 +432,6 @@ namespace Windows_Task_Dialog_Generator
                 {
                     MessageBox.Show("Error updating icon: " + ex.Message);
                 }
-
             }
         }
 
@@ -490,7 +490,7 @@ namespace Windows_Task_Dialog_Generator
             else
             {
                 string winPath = Environment.GetFolderPath(Environment.SpecialFolder.System);
-                string imageresPath = Path.Combine(winPath, "imageres.dll");
+                string imageresPath = Path.Combine(winPath, CustomDllIconPath);
 
                 // When extracting icons from imageres.dll, we need to use the negative of the ID
                 Icon? imageresIcon = System.Drawing.Icon.ExtractIcon(imageresPath, -1 * id);
@@ -501,7 +501,7 @@ namespace Windows_Task_Dialog_Generator
                 }
                 else
                 {
-                    MessageBox.Show($"No icon found in imageres.dll with ID {id}");
+                    MessageBox.Show($"No icon found in {CustomDllIconPath} with ID {id}");
                     return null;
                 }
             }
@@ -536,7 +536,7 @@ namespace Windows_Task_Dialog_Generator
         private static Icon? GetIconObjectFromImageRes(int id)
         {
             string winPath = Environment.GetFolderPath(Environment.SpecialFolder.System);
-            string imageresPath = Path.Combine(winPath, "imageres.dll");
+            string imageresPath = Path.Combine(winPath, CustomDllIconPath);
             try
             {
                 return Icon.ExtractIcon(imageresPath, -1 * id); // Negative ID to extract from imageres.dll
@@ -551,7 +551,7 @@ namespace Windows_Task_Dialog_Generator
         private static System.Drawing.Bitmap? GetIconPreviewImageFromImageRes(int id, int size)
         {
             string winPath = Environment.GetFolderPath(Environment.SpecialFolder.System);
-            string imageresPath = Path.Combine(winPath, "imageres.dll");
+            string imageresPath = Path.Combine(winPath, CustomDllIconPath);
             try
             {
                 return Icon.ExtractIcon(imageresPath, -1 * id, size)?.ToBitmap(); // Negative ID to extract from imageres.dll
@@ -866,11 +866,11 @@ namespace Windows_Task_Dialog_Generator
 
         private void buttonImageResIcons_Click(object sender, EventArgs e)
         {
-            string customIconDll = tbCustomIconDll.Text;
+            CustomDllIconPath = tbCustomIconDll.Text;
 
             if (tbCustomIconDll.Text == "")
             {
-                customIconDll = "imageres.dll";
+                CustomDllIconPath = DefaultDllIconPath;
             }
 
             // Check if the form is already open or already created
@@ -878,7 +878,7 @@ namespace Windows_Task_Dialog_Generator
             {
                 if (form is Imageres_Icons imageres_Icons)
                 {
-                    if (imageres_Icons.CustomIconDLLPath != customIconDll)
+                    if (imageres_Icons.CustomIconDLLPath != CustomDllIconPath)
                     {
                         form.Close();
                     }
@@ -892,7 +892,7 @@ namespace Windows_Task_Dialog_Generator
             }
 
             // Open the Imageres_Icons form
-            Imageres_Icons imageresIcons = new Imageres_Icons(this, customIconDll);
+            Imageres_Icons imageresIcons = new Imageres_Icons(this, CustomDllIconPath);
             imageresIcons.Show();
         }
 

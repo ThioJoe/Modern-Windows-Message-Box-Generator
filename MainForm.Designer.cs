@@ -116,6 +116,7 @@
             buttonBrowseCustomIconTitle = new Button();
             toolTip1 = new ToolTip(components);
             btnAbout = new Button();
+            tbCustomIconDll = new TextBox();
             cbPresets = new ComboBox();
             btnPresetLoad = new Button();
             btnPresetSave = new Button();
@@ -123,7 +124,6 @@
             btnPresetDelete = new Button();
             btnPresetUpdate = new Button();
             groupBoxCustomDll = new GroupBox();
-            tbCustomIconDll = new TextBox();
             gbButtons.SuspendLayout();
             flowButtons.SuspendLayout();
             tableLayoutCustom.SuspendLayout();
@@ -1250,6 +1250,16 @@
             btnAbout.UseVisualStyleBackColor = true;
             btnAbout.Click += btnAbout_Click;
             // 
+            // tbCustomIconDll
+            // 
+            tbCustomIconDll.Location = new Point(6, 27);
+            tbCustomIconDll.Name = "tbCustomIconDll";
+            tbCustomIconDll.PlaceholderText = "Enter path to Custom Icon DLL...";
+            tbCustomIconDll.Size = new Size(213, 23);
+            tbCustomIconDll.TabIndex = 0;
+            tbCustomIconDll.Text = "imageres.dll";
+            toolTip1.SetToolTip(tbCustomIconDll, "Path (Full or relative to System32) to a DLL containing icons where the app will search for the icons. Note that this doesn't work with custom bar colors.");
+            // 
             // cbPresets
             // 
             cbPresets.DropDownStyle = ComboBoxStyle.DropDownList;
@@ -1322,14 +1332,6 @@
             groupBoxCustomDll.TabIndex = 67;
             groupBoxCustomDll.TabStop = false;
             groupBoxCustomDll.Text = "Custom Icon DLL";
-            // 
-            // tbCustomIconDll
-            // 
-            tbCustomIconDll.Location = new Point(6, 27);
-            tbCustomIconDll.Name = "tbCustomIconDll";
-            tbCustomIconDll.PlaceholderText = "Enter path to Custom Icon DLL...";
-            tbCustomIconDll.Size = new Size(213, 23);
-            tbCustomIconDll.TabIndex = 0;
             // 
             // MainForm
             // 
