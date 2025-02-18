@@ -982,6 +982,11 @@ namespace Windows_Task_Dialog_Generator
                 ExpandedInfo = txtExpandedInfo.Text,
                 ShowVerification = chkVerification.Checked,
                 VerificationMessage = textBoxVerification.Text,
+                CustomIconDLLPath = tbCustomIconDll.Text,
+                CustomMainIconID = int.Parse(textBoxCustomIconMainID.Text),
+                CustomTitleIconID = int.Parse(textBoxCustomIconTitleID.Text),
+                CustomMainIconPath = textBoxCustomIconMainPath.Text,
+                CustomTitleIconPath = textBoxCustomIconTitlePath.Text,
                 Buttons = GetSelectedMessageBoxButton()
             };
 
@@ -1069,6 +1074,12 @@ namespace Windows_Task_Dialog_Generator
                     txtExpandedInfo.Text = selectedPreset.ExpandedInfo;
                     chkVerification.Checked = selectedPreset.ShowVerification;
                     textBoxVerification.Text = selectedPreset.VerificationMessage;
+                    tbCustomIconDll.Text = selectedPreset.CustomIconDLLPath;
+                    textBoxCustomIconMainID.Text = selectedPreset.CustomMainIconID.ToString();
+                    textBoxCustomIconTitleID.Text = selectedPreset.CustomTitleIconID.ToString();
+                    textBoxCustomIconMainPath.Text = selectedPreset.CustomMainIconPath;
+                    textBoxCustomIconTitlePath.Text = selectedPreset.CustomTitleIconPath;
+
                     SetSelectedMessageBoxButtonRadio(selectedPreset.Buttons);
                 }
 
@@ -1096,6 +1107,12 @@ namespace Windows_Task_Dialog_Generator
                     selectedPreset.ExpandedInfo = txtExpandedInfo.Text;
                     selectedPreset.ShowVerification = chkVerification.Checked;
                     selectedPreset.VerificationMessage = textBoxVerification.Text;
+                    selectedPreset.CustomIconDLLPath = tbCustomIconDll.Text;
+                    selectedPreset.CustomMainIconID = int.Parse(textBoxCustomIconMainID.Text);
+                    selectedPreset.CustomTitleIconID = int.Parse(textBoxCustomIconTitleID.Text);
+                    selectedPreset.CustomMainIconPath = textBoxCustomIconMainPath.Text;
+                    selectedPreset.CustomTitleIconPath = textBoxCustomIconTitlePath.Text;
+
                     selectedPreset.Buttons = GetSelectedMessageBoxButton();
 
                     // finally change the text of the update button to "updated!" and disable it for 5 seconds then re-enable it and change back to Update
