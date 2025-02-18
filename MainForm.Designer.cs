@@ -1342,6 +1342,7 @@
             btnOpenCustomIconDllReference.Size = new Size(24, 23);
             btnOpenCustomIconDllReference.TabIndex = 1;
             btnOpenCustomIconDllReference.Text = "?";
+            toolTip1.SetToolTip(btnOpenCustomIconDllReference, "Click to see which icons can be loaded (opens in a browser)");
             btnOpenCustomIconDllReference.UseVisualStyleBackColor = true;
             btnOpenCustomIconDllReference.Click += btnOpenCustomIconDllReference_Click;
             // 
