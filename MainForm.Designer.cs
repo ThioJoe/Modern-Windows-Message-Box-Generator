@@ -122,6 +122,8 @@
             groupBoxPresets = new GroupBox();
             btnPresetDelete = new Button();
             btnPresetUpdate = new Button();
+            groupBoxCustomDll = new GroupBox();
+            tbCustomIconDll = new TextBox();
             gbButtons.SuspendLayout();
             flowButtons.SuspendLayout();
             tableLayoutCustom.SuspendLayout();
@@ -140,6 +142,7 @@
             groupBoxCustomIconTitleID.SuspendLayout();
             groupBoxCustomIconTitleFile.SuspendLayout();
             groupBoxPresets.SuspendLayout();
+            groupBoxCustomDll.SuspendLayout();
             SuspendLayout();
             // 
             // txtTitle
@@ -1309,11 +1312,31 @@
             btnPresetUpdate.UseVisualStyleBackColor = true;
             btnPresetUpdate.Click += btnPresetUpdate_Click;
             // 
+            // groupBoxCustomDll
+            // 
+            groupBoxCustomDll.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            groupBoxCustomDll.Controls.Add(tbCustomIconDll);
+            groupBoxCustomDll.Location = new Point(579, 395);
+            groupBoxCustomDll.Name = "groupBoxCustomDll";
+            groupBoxCustomDll.Size = new Size(225, 63);
+            groupBoxCustomDll.TabIndex = 67;
+            groupBoxCustomDll.TabStop = false;
+            groupBoxCustomDll.Text = "Custom Icon DLL";
+            // 
+            // tbCustomIconDll
+            // 
+            tbCustomIconDll.Location = new Point(6, 27);
+            tbCustomIconDll.Name = "tbCustomIconDll";
+            tbCustomIconDll.PlaceholderText = "Enter path to Custom Icon DLL...";
+            tbCustomIconDll.Size = new Size(213, 23);
+            tbCustomIconDll.TabIndex = 0;
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(822, 587);
+            Controls.Add(groupBoxCustomDll);
             Controls.Add(groupBoxPresets);
             Controls.Add(btnAbout);
             Controls.Add(groupBoxCustomIconTitleID);
@@ -1366,6 +1389,8 @@
             groupBoxCustomIconTitleFile.ResumeLayout(false);
             groupBoxCustomIconTitleFile.PerformLayout();
             groupBoxPresets.ResumeLayout(false);
+            groupBoxCustomDll.ResumeLayout(false);
+            groupBoxCustomDll.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -1464,5 +1489,7 @@
         private GroupBox groupBoxPresets;
         private Button btnPresetDelete;
         private Button btnPresetUpdate;
+        private GroupBox groupBoxCustomDll;
+        private TextBox tbCustomIconDll;
     }
 }

@@ -866,19 +866,33 @@ namespace Windows_Task_Dialog_Generator
 
         private void buttonImageResIcons_Click(object sender, EventArgs e)
         {
+            string customIconDll = tbCustomIconDll.Text;
+
+            if (tbCustomIconDll.Text == "")
+            {
+                customIconDll = "imageres.dll";
+            }
+
             // Check if the form is already open or already created
             foreach (Form form in Application.OpenForms)
             {
-                if (form is Imageres_Icons)
+                if (form is Imageres_Icons imageres_Icons)
                 {
-                    form.Show();
-                    form.BringToFront();
-                    return;
+                    if (imageres_Icons.CustomIconDLLPath != customIconDll)
+                    {
+                        form.Close();
+                    }
+                    else
+                    {
+                        form.Show();
+                        form.BringToFront();
+                        return;
+                    }
                 }
             }
 
             // Open the Imageres_Icons form
-            Imageres_Icons imageresIcons = new Imageres_Icons(this);
+            Imageres_Icons imageresIcons = new Imageres_Icons(this, customIconDll);
             imageresIcons.Show();
         }
 

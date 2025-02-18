@@ -39,22 +39,29 @@ namespace Windows_Task_Dialog_Generator
 
         // Delegate for EnumResourceNames callback
         private delegate bool EnumResNameProc(IntPtr hModule, IntPtr lpszType, IntPtr lpszName, IntPtr lParam);
+        public string CustomIconDLLPath = "imageres.dll";
 
-        public Imageres_Icons(MainForm mainForm)
+        public Imageres_Icons(MainForm mainForm, string _customDll)
         {
             this.mainForm = mainForm;
             InitializeComponent();
             this.MinimumSize = Size;
-            LoadIcons();
+            CustomIconDLLPath = _customDll;
             // Ensure the form is hidden instead of closed to avoid having to reload everything
             // Doing this only after all the icons are loaded
             this.FormClosing += OnFormClosing;
+            LoadIcons();
         }
 
         private async void LoadIcons()
         {
             string systemFolder = Environment.GetFolderPath(Environment.SpecialFolder.System);
-            string imageresPath = Path.Combine(systemFolder, "imageres.dll");
+            string imageresPath = CustomIconDLLPath;
+            
+            if (!CustomIconDLLPath.StartsWith(systemFolder))
+            {
+                imageresPath = Path.Combine(systemFolder, imageresPath);
+            }
 
             IntPtr hModule = LoadLibrary(imageresPath);
             if ( hModule == IntPtr.Zero )
@@ -198,6 +205,5 @@ namespace Windows_Task_Dialog_Generator
             e.Cancel = true;
             this.Hide();
         }
-
     }
 }
