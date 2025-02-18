@@ -44,8 +44,8 @@ namespace Windows_Task_Dialog_Generator
         {
             this.mainForm = mainForm;
             InitializeComponent();
+            this.MinimumSize = Size;
             LoadIcons();
-            this.DoubleBuffered = true;
             // Ensure the form is hidden instead of closed to avoid having to reload everything
             // Doing this only after all the icons are loaded
             this.FormClosing += OnFormClosing;
@@ -142,6 +142,7 @@ namespace Windows_Task_Dialog_Generator
                 Width = pictureBox.Width
             };
 
+            // Changed click to MouseDown for better responsiveness
             pictureBox.MouseDown += IconClickHandler;
             iconLabel.MouseDown += IconClickHandler;
 
