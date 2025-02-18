@@ -1331,6 +1331,7 @@
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             Name = "MainForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Task Dialog Generator";
             Load += MainForm_Load;
             gbButtons.ResumeLayout(false);
