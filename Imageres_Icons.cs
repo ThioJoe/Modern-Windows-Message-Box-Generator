@@ -47,6 +47,11 @@ namespace Windows_Task_Dialog_Generator
             InitializeComponent();
             this.MinimumSize = Size;
             CustomIconDLLPath = _customDll;
+            ShowIcon = false;
+            if (_customDll != "")
+            {
+                Text = $"Icon Viewer: {_customDll}";
+            }
             // Ensure the form is hidden instead of closed to avoid having to reload everything
             // Doing this only after all the icons are loaded
             this.FormClosing += OnFormClosing;
