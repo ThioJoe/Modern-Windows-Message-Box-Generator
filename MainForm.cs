@@ -1,4 +1,5 @@
 using Newtonsoft.Json;
+using System.Diagnostics;
 using System.Diagnostics.Eventing.Reader;
 using System.Reflection;
 using System.Runtime.CompilerServices;
@@ -1029,7 +1030,7 @@ namespace Windows_Task_Dialog_Generator
             SavePresetPromptDialog savePresetPromptDialog = new SavePresetPromptDialog(location);
 
             DialogResult result = savePresetPromptDialog.ShowDialog();
-            if (result == DialogResult.OK  && savePresetPromptDialog.PresetName() != "")
+            if (result == DialogResult.OK && savePresetPromptDialog.PresetName() != "")
             {
                 AddPreset(savePresetPromptDialog.PresetName(), AssembleTaskDialogPreset());
             }
@@ -1171,6 +1172,18 @@ namespace Windows_Task_Dialog_Generator
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             TrySavePresets();
+        }
+
+        private void btnOpenCustomIconDllReference_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Process.Start("https://superuser.com/questions/142731/how-can-i-see-which-dlls-included-in-windows-contain-icons#142732");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error opening link: " + ex.Message);
+            }
         }
         // --------------------------------------------------------------------------------------
     }

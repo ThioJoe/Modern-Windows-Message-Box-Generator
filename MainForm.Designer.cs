@@ -124,6 +124,7 @@
             btnPresetDelete = new Button();
             btnPresetUpdate = new Button();
             groupBoxCustomDll = new GroupBox();
+            btnOpenCustomIconDllReference = new Button();
             gbButtons.SuspendLayout();
             flowButtons.SuspendLayout();
             tableLayoutCustom.SuspendLayout();
@@ -1255,7 +1256,7 @@
             tbCustomIconDll.Location = new Point(6, 27);
             tbCustomIconDll.Name = "tbCustomIconDll";
             tbCustomIconDll.PlaceholderText = "Enter path to Custom Icon DLL...";
-            tbCustomIconDll.Size = new Size(213, 23);
+            tbCustomIconDll.Size = new Size(183, 23);
             tbCustomIconDll.TabIndex = 0;
             tbCustomIconDll.Text = "imageres.dll";
             toolTip1.SetToolTip(tbCustomIconDll, "Path (Full or relative to System32) to a DLL containing icons where the app will search for the icons. Note that this doesn't work with custom bar colors.");
@@ -1325,6 +1326,7 @@
             // groupBoxCustomDll
             // 
             groupBoxCustomDll.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            groupBoxCustomDll.Controls.Add(btnOpenCustomIconDllReference);
             groupBoxCustomDll.Controls.Add(tbCustomIconDll);
             groupBoxCustomDll.Location = new Point(579, 395);
             groupBoxCustomDll.Name = "groupBoxCustomDll";
@@ -1332,6 +1334,16 @@
             groupBoxCustomDll.TabIndex = 67;
             groupBoxCustomDll.TabStop = false;
             groupBoxCustomDll.Text = "Custom Icon DLL";
+            // 
+            // btnOpenCustomIconDllReference
+            // 
+            btnOpenCustomIconDllReference.Location = new Point(195, 27);
+            btnOpenCustomIconDllReference.Name = "btnOpenCustomIconDllReference";
+            btnOpenCustomIconDllReference.Size = new Size(24, 23);
+            btnOpenCustomIconDllReference.TabIndex = 1;
+            btnOpenCustomIconDllReference.Text = "?";
+            btnOpenCustomIconDllReference.UseVisualStyleBackColor = true;
+            btnOpenCustomIconDllReference.Click += btnOpenCustomIconDllReference_Click;
             // 
             // MainForm
             // 
@@ -1493,5 +1505,6 @@
         private Button btnPresetUpdate;
         private GroupBox groupBoxCustomDll;
         private TextBox tbCustomIconDll;
+        private Button btnOpenCustomIconDllReference;
     }
 }
