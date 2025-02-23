@@ -117,14 +117,13 @@
             toolTip1 = new ToolTip(components);
             btnAbout = new Button();
             tbCustomIconDll = new TextBox();
+            btnOpenCustomIconDllReference = new Button();
             cbPresets = new ComboBox();
-            btnPresetLoad = new Button();
             btnPresetSave = new Button();
             groupBoxPresets = new GroupBox();
             btnPresetDelete = new Button();
             btnPresetUpdate = new Button();
             groupBoxCustomDll = new GroupBox();
-            btnOpenCustomIconDllReference = new Button();
             gbButtons.SuspendLayout();
             flowButtons.SuspendLayout();
             tableLayoutCustom.SuspendLayout();
@@ -1261,6 +1260,17 @@
             tbCustomIconDll.Text = "imageres.dll";
             toolTip1.SetToolTip(tbCustomIconDll, "Path (Full or relative to System32) to a DLL containing icons where the app will search for the icons. Note that this doesn't work with custom bar colors.");
             // 
+            // btnOpenCustomIconDllReference
+            // 
+            btnOpenCustomIconDllReference.Location = new Point(195, 27);
+            btnOpenCustomIconDllReference.Name = "btnOpenCustomIconDllReference";
+            btnOpenCustomIconDllReference.Size = new Size(24, 23);
+            btnOpenCustomIconDllReference.TabIndex = 1;
+            btnOpenCustomIconDllReference.Text = "?";
+            toolTip1.SetToolTip(btnOpenCustomIconDllReference, "Click to see which icons can be loaded (opens in a browser)");
+            btnOpenCustomIconDllReference.UseVisualStyleBackColor = true;
+            btnOpenCustomIconDllReference.Click += btnOpenCustomIconDllReference_Click;
+            // 
             // cbPresets
             // 
             cbPresets.DropDownStyle = ComboBoxStyle.DropDownList;
@@ -1268,22 +1278,13 @@
             cbPresets.Name = "cbPresets";
             cbPresets.Size = new Size(301, 23);
             cbPresets.TabIndex = 58;
-            // 
-            // btnPresetLoad
-            // 
-            btnPresetLoad.Location = new Point(62, 51);
-            btnPresetLoad.Name = "btnPresetLoad";
-            btnPresetLoad.Size = new Size(50, 23);
-            btnPresetLoad.TabIndex = 60;
-            btnPresetLoad.Text = "Load";
-            btnPresetLoad.UseVisualStyleBackColor = true;
-            btnPresetLoad.Click += btnPresetLoad_Click;
+            cbPresets.SelectedIndexChanged += cbPresets_SelectedIndexChanged;
             // 
             // btnPresetSave
             // 
             btnPresetSave.Location = new Point(6, 51);
             btnPresetSave.Name = "btnPresetSave";
-            btnPresetSave.Size = new Size(50, 23);
+            btnPresetSave.Size = new Size(55, 23);
             btnPresetSave.TabIndex = 59;
             btnPresetSave.Text = "Save";
             btnPresetSave.UseVisualStyleBackColor = true;
@@ -1295,7 +1296,6 @@
             groupBoxPresets.Controls.Add(cbPresets);
             groupBoxPresets.Controls.Add(btnPresetDelete);
             groupBoxPresets.Controls.Add(btnPresetUpdate);
-            groupBoxPresets.Controls.Add(btnPresetLoad);
             groupBoxPresets.Location = new Point(12, 413);
             groupBoxPresets.Name = "groupBoxPresets";
             groupBoxPresets.Size = new Size(317, 88);
@@ -1334,17 +1334,6 @@
             groupBoxCustomDll.TabIndex = 67;
             groupBoxCustomDll.TabStop = false;
             groupBoxCustomDll.Text = "Custom Icon DLL";
-            // 
-            // btnOpenCustomIconDllReference
-            // 
-            btnOpenCustomIconDllReference.Location = new Point(195, 27);
-            btnOpenCustomIconDllReference.Name = "btnOpenCustomIconDllReference";
-            btnOpenCustomIconDllReference.Size = new Size(24, 23);
-            btnOpenCustomIconDllReference.TabIndex = 1;
-            btnOpenCustomIconDllReference.Text = "?";
-            toolTip1.SetToolTip(btnOpenCustomIconDllReference, "Click to see which icons can be loaded (opens in a browser)");
-            btnOpenCustomIconDllReference.UseVisualStyleBackColor = true;
-            btnOpenCustomIconDllReference.Click += btnOpenCustomIconDllReference_Click;
             // 
             // MainForm
             // 
@@ -1499,7 +1488,6 @@
         private TableLayoutPanel tableLayoutCustom;
         private Button btnAbout;
         private ComboBox cbPresets;
-        private Button btnPresetLoad;
         private Button btnPresetSave;
         private GroupBox groupBoxPresets;
         private Button btnPresetDelete;

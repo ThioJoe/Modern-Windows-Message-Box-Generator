@@ -64,7 +64,6 @@ namespace Windows_Task_Dialog_Generator
             {
                 cbPresets.Enabled = false;
                 btnPresetUpdate.Enabled = false;
-                btnPresetLoad.Enabled = false;
                 btnPresetDelete.Enabled = false;
             }
             else
@@ -978,7 +977,7 @@ namespace Windows_Task_Dialog_Generator
             {
                 textBoxCustomIconMainID.Text = "0";
             }
-            
+
             if (textBoxCustomIconTitleID.Text == "")
             {
                 textBoxCustomIconTitleID.Text = "0";
@@ -1058,43 +1057,8 @@ namespace Windows_Task_Dialog_Generator
             cbPresets.Enabled = true;
             btnPresetDelete.Enabled = true;
             btnPresetUpdate.Enabled = true;
-            btnPresetLoad.Enabled = true;
             cbPresets.Items.Add(name);
             cbPresets.SelectedIndex = cbPresets.Items.Count - 1;
-        }
-
-        private void btnPresetLoad_Click(object sender, EventArgs e)
-        {
-            // Load values from selected preset
-            if (cbPresets.SelectedIndex != -1)
-            {
-                string? selectedPresetName = cbPresets.SelectedItem?.ToString();
-                if (selectedPresetName == null)
-                {
-                    // TODO: Replace with one of the custom message boxes
-                    MessageBox.Show("Did ya mess with the files or somethin? It seems like the preset you selected does not exist in our records", "Oopsies, can't load the preset!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-                TaskDialogPreset? selectedPreset = Presets[selectedPresetName];
-                if (selectedPreset != null)
-                {
-                    txtTitle.Text = selectedPreset.Title;
-                    txtHeading.Text = selectedPreset.Heading;
-                    txtMessage.Text = selectedPreset.Message;
-                    txtFooter.Text = selectedPreset.Footer;
-                    txtExpandedInfo.Text = selectedPreset.ExpandedInfo;
-                    chkVerification.Checked = selectedPreset.ShowVerification;
-                    textBoxVerification.Text = selectedPreset.VerificationMessage;
-                    tbCustomIconDll.Text = selectedPreset.CustomIconDLLPath;
-                    textBoxCustomIconMainID.Text = selectedPreset.CustomMainIconID.ToString();
-                    textBoxCustomIconTitleID.Text = selectedPreset.CustomTitleIconID.ToString();
-                    textBoxCustomIconMainPath.Text = selectedPreset.CustomMainIconPath;
-                    textBoxCustomIconTitlePath.Text = selectedPreset.CustomTitleIconPath;
-
-                    SetSelectedMessageBoxButtonRadio(selectedPreset.Buttons);
-                }
-
-            }
         }
 
         private void btnPresetUpdate_Click(object sender, EventArgs e)
@@ -1159,7 +1123,6 @@ namespace Windows_Task_Dialog_Generator
                     cbPresets.Enabled = false;
                     btnPresetDelete.Enabled = false;
                     btnPresetUpdate.Enabled = false;
-                    btnPresetLoad.Enabled = false;
                 }
                 else
                 {
@@ -1193,6 +1156,39 @@ namespace Windows_Task_Dialog_Generator
             catch (Exception ex)
             {
                 MessageBox.Show("Error opening link: " + ex.Message);
+            }
+        }
+
+        private void cbPresets_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Load values from selected preset
+            if (cbPresets.SelectedIndex != -1)
+            {
+                string? selectedPresetName = cbPresets.SelectedItem?.ToString();
+                if (selectedPresetName == null)
+                {
+                    // TODO: Replace with one of the custom message boxes
+                    MessageBox.Show("Did ya mess with the files or somethin? It seems like the preset you selected does not exist in our records", "Oopsies, can't load the preset!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                TaskDialogPreset? selectedPreset = Presets[selectedPresetName];
+                if (selectedPreset != null)
+                {
+                    txtTitle.Text = selectedPreset.Title;
+                    txtHeading.Text = selectedPreset.Heading;
+                    txtMessage.Text = selectedPreset.Message;
+                    txtFooter.Text = selectedPreset.Footer;
+                    txtExpandedInfo.Text = selectedPreset.ExpandedInfo;
+                    chkVerification.Checked = selectedPreset.ShowVerification;
+                    textBoxVerification.Text = selectedPreset.VerificationMessage;
+                    tbCustomIconDll.Text = selectedPreset.CustomIconDLLPath;
+                    textBoxCustomIconMainID.Text = selectedPreset.CustomMainIconID.ToString();
+                    textBoxCustomIconTitleID.Text = selectedPreset.CustomTitleIconID.ToString();
+                    textBoxCustomIconMainPath.Text = selectedPreset.CustomMainIconPath;
+                    textBoxCustomIconTitlePath.Text = selectedPreset.CustomTitleIconPath;
+
+                    SetSelectedMessageBoxButtonRadio(selectedPreset.Buttons);
+                }
             }
         }
         // --------------------------------------------------------------------------------------
