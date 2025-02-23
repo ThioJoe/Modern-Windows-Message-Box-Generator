@@ -974,6 +974,16 @@ namespace Windows_Task_Dialog_Generator
 
         public TaskDialogPreset AssembleTaskDialogPreset()
         {
+            if (textBoxCustomIconMainID.Text == "")
+            {
+                textBoxCustomIconMainID.Text = "0";
+            }
+            
+            if (textBoxCustomIconTitleID.Text == "")
+            {
+                textBoxCustomIconTitleID.Text = "0";
+            }
+
             TaskDialogPreset preset = new TaskDialogPreset()
             {
                 Title = txtTitle.Text,
