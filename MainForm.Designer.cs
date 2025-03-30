@@ -146,8 +146,9 @@
             // 
             txtHeading.Location = new Point(5, 76);
             txtHeading.Margin = new Padding(5, 2, 5, 5);
+            txtHeading.Multiline = true;
             txtHeading.Name = "txtHeading";
-            txtHeading.Size = new Size(304, 23);
+            txtHeading.Size = new Size(304, 46);
             txtHeading.TabIndex = 1;
             // 
             // lblTitle
@@ -194,7 +195,7 @@
             flowButtons.Dock = DockStyle.Fill;
             flowButtons.FlowDirection = FlowDirection.TopDown;
             flowButtons.Location = new Point(3, 19);
-            flowButtons.Margin = new Padding(2, 2, 2, 2);
+            flowButtons.Margin = new Padding(2);
             flowButtons.Name = "flowButtons";
             flowButtons.Size = new Size(217, 284);
             flowButtons.TabIndex = 24;
@@ -876,7 +877,7 @@
             // lblFooter
             // 
             lblFooter.AutoSize = true;
-            lblFooter.Location = new Point(5, 161);
+            lblFooter.Location = new Point(5, 207);
             lblFooter.Margin = new Padding(5, 5, 5, 2);
             lblFooter.Name = "lblFooter";
             lblFooter.Size = new Size(44, 15);
@@ -885,10 +886,11 @@
             // 
             // txtFooter
             // 
-            txtFooter.Location = new Point(5, 180);
+            txtFooter.Location = new Point(5, 226);
             txtFooter.Margin = new Padding(5, 2, 5, 5);
+            txtFooter.Multiline = true;
             txtFooter.Name = "txtFooter";
-            txtFooter.Size = new Size(304, 23);
+            txtFooter.Size = new Size(304, 46);
             txtFooter.TabIndex = 3;
             // 
             // chkVerification
@@ -905,7 +907,7 @@
             // lblExpandedInfo
             // 
             lblExpandedInfo.AutoSize = true;
-            lblExpandedInfo.Location = new Point(5, 213);
+            lblExpandedInfo.Location = new Point(5, 282);
             lblExpandedInfo.Margin = new Padding(5, 5, 5, 2);
             lblExpandedInfo.Name = "lblExpandedInfo";
             lblExpandedInfo.Size = new Size(124, 15);
@@ -914,7 +916,7 @@
             // 
             // txtExpandedInfo
             // 
-            txtExpandedInfo.Location = new Point(5, 232);
+            txtExpandedInfo.Location = new Point(5, 301);
             txtExpandedInfo.Margin = new Padding(5, 2, 5, 5);
             txtExpandedInfo.Multiline = true;
             txtExpandedInfo.Name = "txtExpandedInfo";
@@ -924,7 +926,7 @@
             // textBoxCustomIconMainPath
             // 
             textBoxCustomIconMainPath.Location = new Point(9, 23);
-            textBoxCustomIconMainPath.Margin = new Padding(2, 2, 2, 2);
+            textBoxCustomIconMainPath.Margin = new Padding(2);
             textBoxCustomIconMainPath.Name = "textBoxCustomIconMainPath";
             textBoxCustomIconMainPath.Size = new Size(225, 23);
             textBoxCustomIconMainPath.TabIndex = 1;
@@ -932,7 +934,7 @@
             // buttonBrowseCustomIconMain
             // 
             buttonBrowseCustomIconMain.Location = new Point(236, 20);
-            buttonBrowseCustomIconMain.Margin = new Padding(2, 2, 2, 2);
+            buttonBrowseCustomIconMain.Margin = new Padding(2);
             buttonBrowseCustomIconMain.Name = "buttonBrowseCustomIconMain";
             buttonBrowseCustomIconMain.Size = new Size(78, 26);
             buttonBrowseCustomIconMain.TabIndex = 13;
@@ -947,9 +949,9 @@
             groupBoxCustomIconMainFile.Controls.Add(buttonBrowseCustomIconMain);
             groupBoxCustomIconMainFile.Enabled = false;
             groupBoxCustomIconMainFile.Location = new Point(486, 461);
-            groupBoxCustomIconMainFile.Margin = new Padding(2, 2, 2, 2);
+            groupBoxCustomIconMainFile.Margin = new Padding(2);
             groupBoxCustomIconMainFile.Name = "groupBoxCustomIconMainFile";
-            groupBoxCustomIconMainFile.Padding = new Padding(2, 2, 2, 2);
+            groupBoxCustomIconMainFile.Padding = new Padding(2);
             groupBoxCustomIconMainFile.Size = new Size(318, 55);
             groupBoxCustomIconMainFile.TabIndex = 14;
             groupBoxCustomIconMainFile.TabStop = false;
@@ -958,8 +960,8 @@
             // buttonTest
             // 
             buttonTest.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            buttonTest.Location = new Point(190, 493);
-            buttonTest.Margin = new Padding(2, 2, 2, 2);
+            buttonTest.Location = new Point(645, 413);
+            buttonTest.Margin = new Padding(2);
             buttonTest.Name = "buttonTest";
             buttonTest.Size = new Size(78, 25);
             buttonTest.TabIndex = 15;
@@ -979,9 +981,9 @@
             groupBoxBarColor.Controls.Add(rbBarColorGray);
             groupBoxBarColor.Controls.Add(rbBarColorBlue);
             groupBoxBarColor.Location = new Point(343, 324);
-            groupBoxBarColor.Margin = new Padding(2, 2, 2, 2);
+            groupBoxBarColor.Margin = new Padding(2);
             groupBoxBarColor.Name = "groupBoxBarColor";
-            groupBoxBarColor.Padding = new Padding(2, 2, 2, 2);
+            groupBoxBarColor.Padding = new Padding(2);
             groupBoxBarColor.Size = new Size(222, 114);
             groupBoxBarColor.TabIndex = 4;
             groupBoxBarColor.TabStop = false;
@@ -991,7 +993,7 @@
             // 
             rbBarColorNone.AutoSize = true;
             rbBarColorNone.Location = new Point(27, 84);
-            rbBarColorNone.Margin = new Padding(2, 2, 2, 2);
+            rbBarColorNone.Margin = new Padding(2);
             rbBarColorNone.Name = "rbBarColorNone";
             rbBarColorNone.Size = new Size(86, 19);
             rbBarColorNone.TabIndex = 6;
@@ -1003,7 +1005,7 @@
             rbBarColorDefault.AutoSize = true;
             rbBarColorDefault.Checked = true;
             rbBarColorDefault.Location = new Point(27, 24);
-            rbBarColorDefault.Margin = new Padding(2, 2, 2, 2);
+            rbBarColorDefault.Margin = new Padding(2);
             rbBarColorDefault.Name = "rbBarColorDefault";
             rbBarColorDefault.Size = new Size(63, 19);
             rbBarColorDefault.TabIndex = 0;
@@ -1015,7 +1017,7 @@
             // 
             rbBarColorGreen.AutoSize = true;
             rbBarColorGreen.Location = new Point(103, 24);
-            rbBarColorGreen.Margin = new Padding(2, 2, 2, 2);
+            rbBarColorGreen.Margin = new Padding(2);
             rbBarColorGreen.Name = "rbBarColorGreen";
             rbBarColorGreen.Size = new Size(56, 19);
             rbBarColorGreen.TabIndex = 1;
@@ -1026,7 +1028,7 @@
             // 
             rbBarColorRed.AutoSize = true;
             rbBarColorRed.Location = new Point(27, 64);
-            rbBarColorRed.Margin = new Padding(2, 2, 2, 2);
+            rbBarColorRed.Margin = new Padding(2);
             rbBarColorRed.Name = "rbBarColorRed";
             rbBarColorRed.Size = new Size(45, 19);
             rbBarColorRed.TabIndex = 4;
@@ -1037,7 +1039,7 @@
             // 
             rbBarColorYellow.AutoSize = true;
             rbBarColorYellow.Location = new Point(103, 44);
-            rbBarColorYellow.Margin = new Padding(2, 2, 2, 2);
+            rbBarColorYellow.Margin = new Padding(2);
             rbBarColorYellow.Name = "rbBarColorYellow";
             rbBarColorYellow.Size = new Size(59, 19);
             rbBarColorYellow.TabIndex = 3;
@@ -1048,7 +1050,7 @@
             // 
             rbBarColorGray.AutoSize = true;
             rbBarColorGray.Location = new Point(27, 44);
-            rbBarColorGray.Margin = new Padding(2, 2, 2, 2);
+            rbBarColorGray.Margin = new Padding(2);
             rbBarColorGray.Name = "rbBarColorGray";
             rbBarColorGray.Size = new Size(49, 19);
             rbBarColorGray.TabIndex = 2;
@@ -1059,7 +1061,7 @@
             // 
             rbBarColorBlue.AutoSize = true;
             rbBarColorBlue.Location = new Point(103, 64);
-            rbBarColorBlue.Margin = new Padding(2, 2, 2, 2);
+            rbBarColorBlue.Margin = new Padding(2);
             rbBarColorBlue.Name = "rbBarColorBlue";
             rbBarColorBlue.Size = new Size(48, 19);
             rbBarColorBlue.TabIndex = 5;
@@ -1072,9 +1074,9 @@
             groupBoxCustomIconMainID.Controls.Add(textBoxCustomIconMainID);
             groupBoxCustomIconMainID.Enabled = false;
             groupBoxCustomIconMainID.Location = new Point(337, 461);
-            groupBoxCustomIconMainID.Margin = new Padding(2, 2, 2, 2);
+            groupBoxCustomIconMainID.Margin = new Padding(2);
             groupBoxCustomIconMainID.Name = "groupBoxCustomIconMainID";
-            groupBoxCustomIconMainID.Padding = new Padding(2, 2, 2, 2);
+            groupBoxCustomIconMainID.Padding = new Padding(2);
             groupBoxCustomIconMainID.Size = new Size(145, 55);
             groupBoxCustomIconMainID.TabIndex = 17;
             groupBoxCustomIconMainID.TabStop = false;
@@ -1083,7 +1085,7 @@
             // textBoxCustomIconMainID
             // 
             textBoxCustomIconMainID.Location = new Point(15, 23);
-            textBoxCustomIconMainID.Margin = new Padding(2, 2, 2, 2);
+            textBoxCustomIconMainID.Margin = new Padding(2);
             textBoxCustomIconMainID.Name = "textBoxCustomIconMainID";
             textBoxCustomIconMainID.Size = new Size(125, 23);
             textBoxCustomIconMainID.TabIndex = 0;
@@ -1092,7 +1094,7 @@
             // lblMessage
             // 
             lblMessage.AutoSize = true;
-            lblMessage.Location = new Point(5, 109);
+            lblMessage.Location = new Point(5, 132);
             lblMessage.Margin = new Padding(5, 5, 5, 2);
             lblMessage.Name = "lblMessage";
             lblMessage.Size = new Size(56, 15);
@@ -1101,27 +1103,28 @@
             // 
             // txtMessage
             // 
-            txtMessage.Location = new Point(5, 128);
+            txtMessage.Location = new Point(5, 151);
             txtMessage.Margin = new Padding(5, 2, 5, 5);
-            txtMessage.Name = "txtMessage";
-            txtMessage.Size = new Size(304, 52);
-            txtMessage.TabIndex = 2;
             txtMessage.Multiline = true;
+            txtMessage.Name = "txtMessage";
+            txtMessage.Size = new Size(304, 46);
+            txtMessage.TabIndex = 2;
             // 
             // textBoxVerification
             // 
             textBoxVerification.Location = new Point(128, 2);
-            textBoxVerification.Margin = new Padding(2, 2, 2, 2);
+            textBoxVerification.Margin = new Padding(2);
+            textBoxVerification.Multiline = true;
             textBoxVerification.Name = "textBoxVerification";
             textBoxVerification.PlaceholderText = " Don't ask again";
-            textBoxVerification.Size = new Size(176, 23);
+            textBoxVerification.Size = new Size(176, 46);
             textBoxVerification.TabIndex = 5;
             // 
             // buttonImageResIcons
             // 
             buttonImageResIcons.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             buttonImageResIcons.Location = new Point(169, 543);
-            buttonImageResIcons.Margin = new Padding(2, 2, 2, 2);
+            buttonImageResIcons.Margin = new Padding(2);
             buttonImageResIcons.Name = "buttonImageResIcons";
             buttonImageResIcons.Size = new Size(120, 27);
             buttonImageResIcons.TabIndex = 1;
@@ -1145,7 +1148,7 @@
             flowLayoutPanelDialogContents.FlowDirection = FlowDirection.TopDown;
             flowLayoutPanelDialogContents.Location = new Point(12, 13);
             flowLayoutPanelDialogContents.Name = "flowLayoutPanelDialogContents";
-            flowLayoutPanelDialogContents.Size = new Size(317, 425);
+            flowLayoutPanelDialogContents.Size = new Size(317, 480);
             flowLayoutPanelDialogContents.TabIndex = 2;
             flowLayoutPanelDialogContents.WrapContents = false;
             // 
@@ -1154,10 +1157,10 @@
             flowLayoutPanelVerification.AutoSize = true;
             flowLayoutPanelVerification.Controls.Add(chkVerification);
             flowLayoutPanelVerification.Controls.Add(textBoxVerification);
-            flowLayoutPanelVerification.Location = new Point(3, 334);
+            flowLayoutPanelVerification.Location = new Point(3, 403);
             flowLayoutPanelVerification.Margin = new Padding(3, 5, 3, 3);
             flowLayoutPanelVerification.Name = "flowLayoutPanelVerification";
-            flowLayoutPanelVerification.Size = new Size(306, 27);
+            flowLayoutPanelVerification.Size = new Size(306, 50);
             flowLayoutPanelVerification.TabIndex = 24;
             // 
             // labelVersion
@@ -1177,9 +1180,9 @@
             groupBoxCustomIconTitleID.Controls.Add(textBoxCustomIconTitleID);
             groupBoxCustomIconTitleID.Enabled = false;
             groupBoxCustomIconTitleID.Location = new Point(337, 520);
-            groupBoxCustomIconTitleID.Margin = new Padding(2, 2, 2, 2);
+            groupBoxCustomIconTitleID.Margin = new Padding(2);
             groupBoxCustomIconTitleID.Name = "groupBoxCustomIconTitleID";
-            groupBoxCustomIconTitleID.Padding = new Padding(2, 2, 2, 2);
+            groupBoxCustomIconTitleID.Padding = new Padding(2);
             groupBoxCustomIconTitleID.Size = new Size(145, 55);
             groupBoxCustomIconTitleID.TabIndex = 19;
             groupBoxCustomIconTitleID.TabStop = false;
@@ -1188,7 +1191,7 @@
             // textBoxCustomIconTitleID
             // 
             textBoxCustomIconTitleID.Location = new Point(15, 23);
-            textBoxCustomIconTitleID.Margin = new Padding(2, 2, 2, 2);
+            textBoxCustomIconTitleID.Margin = new Padding(2);
             textBoxCustomIconTitleID.Name = "textBoxCustomIconTitleID";
             textBoxCustomIconTitleID.Size = new Size(125, 23);
             textBoxCustomIconTitleID.TabIndex = 2;
@@ -1201,9 +1204,9 @@
             groupBoxCustomIconTitleFile.Controls.Add(buttonBrowseCustomIconTitle);
             groupBoxCustomIconTitleFile.Enabled = false;
             groupBoxCustomIconTitleFile.Location = new Point(486, 520);
-            groupBoxCustomIconTitleFile.Margin = new Padding(2, 2, 2, 2);
+            groupBoxCustomIconTitleFile.Margin = new Padding(2);
             groupBoxCustomIconTitleFile.Name = "groupBoxCustomIconTitleFile";
-            groupBoxCustomIconTitleFile.Padding = new Padding(2, 2, 2, 2);
+            groupBoxCustomIconTitleFile.Padding = new Padding(2);
             groupBoxCustomIconTitleFile.Size = new Size(318, 55);
             groupBoxCustomIconTitleFile.TabIndex = 18;
             groupBoxCustomIconTitleFile.TabStop = false;
@@ -1212,7 +1215,7 @@
             // textBoxCustomIconTitlePath
             // 
             textBoxCustomIconTitlePath.Location = new Point(9, 23);
-            textBoxCustomIconTitlePath.Margin = new Padding(2, 2, 2, 2);
+            textBoxCustomIconTitlePath.Margin = new Padding(2);
             textBoxCustomIconTitlePath.Name = "textBoxCustomIconTitlePath";
             textBoxCustomIconTitlePath.Size = new Size(225, 23);
             textBoxCustomIconTitlePath.TabIndex = 3;
@@ -1220,7 +1223,7 @@
             // buttonBrowseCustomIconTitle
             // 
             buttonBrowseCustomIconTitle.Location = new Point(236, 20);
-            buttonBrowseCustomIconTitle.Margin = new Padding(2, 2, 2, 2);
+            buttonBrowseCustomIconTitle.Margin = new Padding(2);
             buttonBrowseCustomIconTitle.Name = "buttonBrowseCustomIconTitle";
             buttonBrowseCustomIconTitle.Size = new Size(78, 26);
             buttonBrowseCustomIconTitle.TabIndex = 13;
